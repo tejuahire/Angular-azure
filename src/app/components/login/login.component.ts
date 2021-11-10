@@ -17,6 +17,7 @@ export class LoginComponent{
     invalidUser = false;
     switchToLoginPage = true;
     errorMessage = '';
+    showImage=true;
 
     constructor(private router: Router,private loginservice: AuthenticationService) {  }
 
@@ -90,10 +91,12 @@ export class LoginComponent{
 
     switchToRegister(){
     this.switchToLoginPage = false;
+    this.showImage=false;
     }
 
     switchToLogin(){
     this.switchToLoginPage = true;
+
     }
 
 }
