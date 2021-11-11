@@ -35,5 +35,10 @@ export class AuthenticationService
     logOut() {
       localStorage.removeItem('username')
     }
- 
+    forgot(user,mailid,password) 
+    {    
+        this.url = this.baseUrl + "forgot";
+        return this.http.post<UserResponse>(this.url, {"username":user,"email":mailid,"password":password} );       
+               
+    }
 }
