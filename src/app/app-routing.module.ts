@@ -11,6 +11,7 @@ import { MySharesComponent } from './components/my-shares/my-shares.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { UnderProgressComponent } from './components/under-progress/under-progress.component'
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { HistoryComponent } from './components/history/history.component';
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,7 +26,8 @@ export const AppRoutes: Routes = [
   { path: 'gainers', component: UnderProgressComponent },
   { path: 'losers', component: UnderProgressComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'home',component: HomeComponent }
+  { path: 'home',component: HomeComponent },
+  { path: 'history', component: HistoryComponent },
 ];
 
 @NgModule({

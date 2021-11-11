@@ -25,6 +25,7 @@ import { SearchComponent } from './components/search/search.component'
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { HistoryComponent } from './components/history/history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
     UnderProgressComponent,
     SearchComponent,
     FooterComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

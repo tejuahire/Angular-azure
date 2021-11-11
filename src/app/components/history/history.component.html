@@ -1,0 +1,41 @@
+<div class="heading">
+
+    <div *ngIf="history" class="table-responsive-md " id="">
+        <h2>Transaction</h2> 
+        <table class="table table-borderles table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>Order Id</th>
+                    <th>Company Name</th>
+                    <th>Company Id</th>
+                    <th>Amount</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Buy/Sell</th>
+
+                   
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let elements of history">
+                    <td>{{elements.sno}}</td>
+                    <td>{{elements.company_name}}</td>
+                    <td>{{elements.company_id}}</td>
+                    <td>{{elements.price}}</td>
+                    <td>{{elements.quantity}}</td>
+                    <td>{{elements.date}}</td>
+                    <td>{{elements.time}}</td>
+                    <td>{{elements.type}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <p *ngIf="!history" class="noData">
+        Nothing available in your Transactions
+    </p>
+</div>

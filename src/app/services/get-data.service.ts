@@ -22,15 +22,15 @@ export class GetDataService {
 
   getAllCompany():Observable<any>
   {
-      this.url = this.baseUrl + "get-all";
-      return this.http.get(this.url);       
-  }
-
-  companysearch():Observable<any>
-  {
       this.url = this.baseUrl + "companysearch";
       return this.http.get(this.url);       
   }
+
+  getHistory(email) {
+    this.url = this.baseUrl + "history?email=" + email;
+    return this.http.get<MyShareResponse>(this.url);
+  }
+
 
   getWatchList(email)
   {
