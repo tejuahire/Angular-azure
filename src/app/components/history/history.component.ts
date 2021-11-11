@@ -27,6 +27,8 @@ export class HistoryComponent implements OnInit {
           
           
           if (data.length)
+          console.log(data.length);
+          
             this.history = data;
         },
         error => {
