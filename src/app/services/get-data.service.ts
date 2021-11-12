@@ -26,9 +26,9 @@ export class GetDataService {
       return this.http.get(this.url);       
   }
 
-  getHistory(email) {
+  getHistory(email):Observable<any> {
     this.url = this.baseUrl + "history?email=" + email;
-    return this.http.get<MyShareResponse>(this.url);
+    return this.http.get(this.url);
   }
 
 
@@ -79,8 +79,5 @@ export class GetDataService {
     this.url = this.baseUrl + "sell";
     return this.http.post<responseStatus>(this.url, { "email":email, "companyId":id, "quantity":quantity} );               
   }
-  searchCompany(name){
-    this.url = this.baseUrl + "companysearch?name=" + name;
-      return this.http.get(this.url);  
-  }
+ 
 }

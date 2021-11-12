@@ -2,8 +2,10 @@
 
     <div *ngIf="history" class="table-responsive-md " id="">
         <h2>Transaction</h2> 
-        <table class="table table-borderles table-hover">
-            <thead class="thead-light">
+          <button type="submit"  class="btn btn-primary buy-btn" (click)="exportexcel()">Export to Excel </button>
+        
+          <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
+            <thead class="thead-light" >
                 <tr>
                     <th>Order Id</th>
                     <th>Company Name</th>
@@ -19,7 +21,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let elements of history">
+                <tr *ngFor="let elements of history | async ">
                     <td>{{elements.sno}}</td>
                     <td>{{elements.company_name}}</td>
                     <td>{{elements.company_id}}</td>
