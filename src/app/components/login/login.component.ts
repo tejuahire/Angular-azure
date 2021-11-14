@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authenticate.service';
 
@@ -19,6 +19,7 @@ export class LoginComponent{
     errorMessage = '';
     showImage=true;
 
+  
     constructor(private router: Router,private loginservice: AuthenticationService) {  }
 
     checkValidLogin(mail,pass)
@@ -96,7 +97,7 @@ export class LoginComponent{
 
     switchToLogin(){
     this.switchToLoginPage = true;
-
+    this.showImage=true;
     }
 
 }

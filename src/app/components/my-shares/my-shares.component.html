@@ -13,8 +13,8 @@
                     <th>Close Rate</th>
                     <th>Today's Peak Price</th>
                     <th>Today's Low Price</th>
-                    <th>Year Low</th>
-                    <th>Year High</th>
+                    <th>Date</th>
+                    <th>Time</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -31,8 +31,8 @@
                         <td>{{elements.close_rate}}</td>
                         <td>{{elements.peak_rate}}</td>
                         <td>{{elements.least_rate}}</td>
-                        <td>{{elements.year_low}}</td>
-                        <td>{{elements.year_high}}</td>
+                        <td style="font-size: 9px;font-weight: bold;">{{elements.date}}</td>
+                        <td>{{elements.time}}</td>
                         <td>
                             <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-primary sell">Details</button>
                         </td>
