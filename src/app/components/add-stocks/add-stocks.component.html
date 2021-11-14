@@ -1,0 +1,62 @@
+<div class="col-md-6 offset-md-3">
+
+    <form action=""  (ngSubmit)="onSubmit()">
+
+        
+        <div class="noData">
+            <label for="">Company Name</label>
+            <input type="text" required class="form-control" name="name" [(ngModel)]="company.name">
+        </div>
+        <!-- <div class="noData">
+            <label for="">Company ID</label>
+            <input type="text" required class="form-control" name="company_id" [(ngModel)]="company.company_id">
+        </div> -->
+        <div class="noData">
+            <label for="">Open Price</label>
+            <input type="text" required class="form-control" name="open_rate" [(ngModel)]="company.open_rate">
+        </div>
+        <div class="noData">
+            <label for="">Close Price</label>
+            <input type="text" required class="form-control" name="close_rate" [(ngModel)]="company.close_rate">
+        </div>
+        <div class="noData">
+            <label for="">Least Price</label>
+            <input type="text" required class="form-control" name="least_rate" [(ngModel)]="company.least_rate">
+        </div>
+        <div class="noData">
+            <label for="">Peak Price</label>
+            <input type="text" required name="peak_rate" [(ngModel)]="company.peak_rate" class="form-control">
+        </div>
+
+        <div class="noData">
+            <label for="">Year Low</label>
+            <input type="text" required name="year_low" [(ngModel)]="company.year_low" class="form-control">
+        </div>
+
+        <div class="noData">
+            <label for="">Year High</label>
+            <input type="text" required name="year_high" [(ngModel)]="company.year_high" class="form-control">
+        </div>
+
+        <div class="noData">
+            <label for="">P E Ration</label>
+            <input type="text" required name = "p_e_ratio"[(ngModel)] ="company.p_e_ratio" class="form-control">
+        </div>
+
+        <div class="noData">
+            <label for="">Market Cap</label>
+            <input type="text" required name="market_cap" [(ngModel)] ="company.market_cap" class="form-control">
+        </div>
+
+        <div class="noData">
+            <label for="">Quantity</label>
+            <input type="text" required name="volume" [(ngModel)]="company.volume" class="form-control">
+        </div>
+        <div class="noData">
+            <label for="">Price</label>
+            <input type="text" required name= "current_rate" [(ngModel)]="company.current_rate" class="form-control">
+        </div>
+        <button class="btn btn-primary buy-btn" type="submit"> Add</button>
+    </form>
+
+</div>

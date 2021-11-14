@@ -1,0 +1,50 @@
+<div class="heading">
+
+    <div *ngIf="company" class="table-responsive-md " id="">
+        <h2>Company List</h2> 
+        <button type="submit"  class="btn btn-primary buy-btn" (click)="goToAddcompany()" >Add Stock  </button>
+          <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
+            <thead class="thead-light" >
+                <tr>
+                    <th>Company Name</th>
+                    <th>Company Id</th>
+                    <th>Open Price</th>
+                    <th>Close Price</th>
+                    <th>Least Rate</th>
+                    <th>Peak Rate</th>
+                    <th>Year Low</th>
+                    <th>Year High</th>
+                    <th>P E Ratio</th>
+                    <th>Market Cap</th>
+                    <th>Quantity</th>
+                    <th>Current Price</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let elements of company | async " >
+                    
+                    <td>{{elements.name}}</td>
+                    <td>{{elements.company_id}}</td>
+                    <td>{{elements.open_rate}}</td>
+                    <td>{{elements.close_rate}}</td>
+                    <td>{{elements.least_rate}}</td>
+                    <td>{{elements.peak_rate}}</td>
+                    <td>{{elements.year_low}}</td>
+                    <td>{{elements.year_high}}</td>
+                    <td>{{elements.p_e_ratio}}</td>
+                    <td>{{elements.market_cap}}</td>
+                    <td>{{elements.volume}}</td>
+                    <td>{{elements.current_rate}}</td>
+                    <td><button type="submit"  class="btn btn-danger buy-btn" (click)="deleteCompany(elements.company_id)" >Delete </button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <p *ngIf="!company" class="noData">
+        Nothing available 
+    </p>
+</div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CompanyModel } from '../company-model';
 
 
 interface MyShareResponse {  
@@ -78,6 +79,22 @@ export class GetDataService {
   {
     this.url = this.baseUrl + "sell";
     return this.http.post<responseStatus>(this.url, { "email":email, "companyId":id, "quantity":quantity} );               
+  }
+
+  addCompany(companyModel: CompanyModel): Observable<any> {
+
+    this.url = this.baseUrl + "addCompany";
+
+    return this.http.post(this.url, companyModel);
+
+  }
+
+  deleteCompany(company_id: number): Observable<any> {
+
+    this.url = this.baseUrl + "delete?company_id=" + company_id;
+
+    return this.http.delete(this.url);
+
   }
  
 }

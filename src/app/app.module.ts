@@ -26,6 +26,10 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { HistoryComponent } from './components/history/history.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
+import { AdminComponent } from './components/admin/admin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,10 @@ import { HistoryComponent } from './components/history/history.component';
     SearchComponent,
     FooterComponent,
     ForgotpasswordComponent,
-    HistoryComponent
+    HistoryComponent,
+    AdminloginComponent,
+   AddStocksComponent,
+   AdminComponent
   ],
   imports: [
     BrowserModule,

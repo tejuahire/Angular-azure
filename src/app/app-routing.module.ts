@@ -12,6 +12,9 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { UnderProgressComponent } from './components/under-progress/under-progress.component'
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { HistoryComponent } from './components/history/history.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,6 +30,10 @@ export const AppRoutes: Routes = [
   { path: 'losers', component: UnderProgressComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'home',component: HomeComponent },
+  { path: 'adminlogin',component: AdminloginComponent },
+  { path: 'admin',component: AdminComponent },
+  { path: 'addCompany',component: AddStocksComponent },
+
   { path: 'history', component: HistoryComponent },
 ];
 
