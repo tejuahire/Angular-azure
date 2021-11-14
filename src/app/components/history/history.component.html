@@ -21,7 +21,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let elements of history | async ">
+                <tr *ngFor="let elements of history | async "  [ngClass]="{'red': (elements.price < 0),'green':(elements.price > 0)}">
                     <td>{{elements.sno}}</td>
                     <td>{{elements.company_name}}</td>
                     <td>{{elements.company_id}}</td>

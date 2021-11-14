@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  fileName= 'ExcelSheet.xlsx';
+  fileName= 'statement.xlsx';
   history: Observable<History[]>;
   exportexcel(): void
   {
@@ -37,23 +37,5 @@ export class HistoryComponent implements OnInit {
     this.history = this.getDataservice.getHistory(localStorage.getItem('username'));
   }
 
-  // loadData() {
-  //   this.getDataservice.getHistory(localStorage.getItem('username'))
-  //     .subscribe(
-        
-        
-  //       data => {
-          
-          
-  //         if (data.length)
-  //         console.log(data.length);
-          
-  //           this.history = data;
-  //       },
-  //       error => {
-  //         console.log(error)
-  //       }
-  //     )
-  // }
 
 }
