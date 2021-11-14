@@ -72,3 +72,14 @@ fa-icon
     margin-right:80px;
     margin-top:-40px;
 }
+.red {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+  }
+
+  .green {
+    color: white;
+    font-weight: bold;
+    background-color: green;
+  }
