@@ -51,7 +51,7 @@ export class BuyComponent implements OnInit {
   }
   checkQuantity(qty)
   {
-    if(isNaN(Number(qty.value)) || Number(qty.value) === 0)
+    if(isNaN(Number(qty.value)) || Number(qty.value) === 0 ||Number(this.companyDetails.volume) <1 )
       return false;
     else
       return true;
