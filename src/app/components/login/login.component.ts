@@ -78,6 +78,7 @@ export class LoginComponent{
                         this.password = '';
                         this.invalidUser = false;
                         this.invalidLogin = false;
+                        this.switchToLogin();
                         },
             error  => { console.log(error);
                         if(error.error.message==="User already exists, please check email.")
