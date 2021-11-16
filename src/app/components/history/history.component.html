@@ -1,11 +1,11 @@
 <div class="heading">
 
     <div *ngIf="history" class="table-responsive-md " id="">
-        <h2>Transaction</h2> 
-          <button type="submit"  class="btn btn-primary buy-btn" (click)="exportexcel()">Export to Excel </button>
+        <h2>Transaction </h2> 
+  <button type="submit"  class="btn btn-primary buy-btn" (click)="exportexcel()" >Export to Excel </button>
         
           <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
-            <thead class="thead-light" >
+            <thead>
                 <tr>
                     <th>Order Id</th>
                     <th>Company Name</th>
@@ -21,15 +21,16 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let elements of history | async "  [ngClass]="{'red': (elements.price < 0),'green':(elements.price > 0)}">
+                <tr *ngFor="let elements of history | async " style="color: black;">
                     <td>{{elements.sno}}</td>
-                    <td>{{elements.company_name}}</td>
+                    <td >{{elements.company_name}}</td>
                     <td>{{elements.company_id}}</td>
                     <td>{{elements.price}}</td>
                     <td>{{elements.quantity}}</td>
                     <td>{{elements.date}}</td>
                     <td>{{elements.time}}</td>
-                    <td>{{elements.type}}</td>
+                    <td [ngClass]="{'green': (elements.price < 0),'red':(elements.price > 0)}" style="font-size: large;">
+                    {{elements.type}}</td>
 
                 </tr>
 

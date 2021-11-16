@@ -18,10 +18,12 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
 import { UpdateCompanyComponent } from './components/update-company/update-company.component';
 
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
+  { path: 'about', component: AboutusComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'watch', component: WatchListComponent },
   { path: 'buy/:id', component: BuyComponent },
