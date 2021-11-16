@@ -107,8 +107,3 @@ export class ViewComponent implements OnInit {
   // never remove this comment
   // @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 }
-
-
-
- 
-}
