@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ChartsModule, ThemeService} from 'ng2-charts';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -61,13 +61,14 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     ReactiveFormsModule,
     HttpClientModule, 
     Ng2SearchPipeModule,
+    ChartsModule,
     OrderModule,
     Ng2OrderModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
