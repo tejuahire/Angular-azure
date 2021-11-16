@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ChartsModule } from 'ng2-charts';
+import { ChartsModule, ThemeService} from 'ng2-charts';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -29,6 +29,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AdminComponent } from './components/admin/admin.component';
     HistoryComponent,
     AdminloginComponent,
    AddStocksComponent,
-   AdminComponent
+   AdminComponent,
+ AboutusComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,7 @@ import { AdminComponent } from './components/admin/admin.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
