@@ -17,7 +17,7 @@ interface responseStatus {
 })
 export class GetDataService {
 
-  baseUrl = "http://localhost:8080/";
+  baseUrl = "http://localhost:9000/";
   url="";
   constructor(private http : HttpClient) { }
 
@@ -96,5 +96,19 @@ export class GetDataService {
     return this.http.delete(this.url);
 
   }
+
+  getCompanyById(company_id:number) : Observable<CompanyModel>{
+    this.url=this.baseUrl+"getCompanyById?id="+company_id;
+    return this.http.get<CompanyModel>(this.url);
+  }
+
+  updateCompany(company_id:number,companyModel:CompanyModel):Observable<object>
+  {
+    this.url=this.baseUrl+"updateCompany";
+    return this.http.put<CompanyModel>(`${this.url}/${company_id}`,companyModel);
+   
+
+  }
+
  
 }

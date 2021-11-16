@@ -14,7 +14,10 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { HistoryComponent } from './components/history/history.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AdminComponent } from './components/admin/admin.component';
+
 import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
+import { UpdateCompanyComponent } from './components/update-company/update-company.component';
+
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,7 +36,7 @@ export const AppRoutes: Routes = [
   { path: 'adminlogin',component: AdminloginComponent },
   { path: 'admin',component: AdminComponent },
   { path: 'addCompany',component: AddStocksComponent },
-
+  { path: 'updatecompany/:company_id',component: UpdateCompanyComponent },
   { path: 'history', component: HistoryComponent },
 ];
 

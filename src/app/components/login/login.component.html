@@ -23,7 +23,7 @@
                             <br/>
                             <label>User Name</label>
                             <input type="email" required class="form-control" name="mailid" 
-                                [(ngModel)]=mailid #mail="ngModel" minlength="3" email>
+                                [(ngModel)]=mailid #mail="ngModel" minlength="3" email >
                             
                             <div *ngIf="mail.invalid; else elseBlock" class="text-danger warningMessage">
                                 <div *ngIf="mail.errors.minlength">
