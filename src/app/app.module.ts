@@ -29,6 +29,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AdminComponent } from './components/admin/admin.component';
     HistoryComponent,
     AdminloginComponent,
    AddStocksComponent,
-   AdminComponent
+   AdminComponent,
+ AboutusComponent,
   ],
   imports: [
     BrowserModule,
