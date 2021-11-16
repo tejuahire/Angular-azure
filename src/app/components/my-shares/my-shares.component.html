@@ -25,7 +25,7 @@
 
                 <tbody>
                     <tr *ngFor="let elements of myShares">
-                        <td class="cname">{{elements.name}}</td>
+                        <td>{{elements.name}}</td>
                         <td>{{elements.current_rate}}</td>
                         <td>{{elements.bought_rate}}</td>
                         <td>{{elements.quantity}}</td>
@@ -38,13 +38,13 @@
                         <td>{{elements.year_low}}</td>
                         <td>{{elements.year_high}}</td>
                         <td>
-                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-primary sell">Details</button>
+                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-outline-primary sell">Details</button>
                         </td>
                         <td>                                 
-                            <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-success">buy</button>
+                            <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-outline-success">buy</button>
                         </td>
                         <td>
-                            <button (click)="goToSellPage(elements.company_id)" type="button" class="btn btn-danger sell">sell</button>
+                            <button (click)="goToSellPage(elements.company_id)" type="button" class="btn btn-outline-danger sell">sell</button>
                         </td>
                     </tr>   
                     

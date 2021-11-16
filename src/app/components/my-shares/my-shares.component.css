@@ -15,7 +15,7 @@
 
 tr:hover
 {
-    background-color: #d3ece5a6 !important;    
+    background-color: rgb(182, 179, 179) !important;    
 }
 .force-overflow
 {
@@ -36,8 +36,9 @@ h2{
   }
 
   tr{
-      background-color: #d2eee6a6;
-      color: black;
+     font-weight: bold;
+    background-color: rgb(226, 224, 224);
+    color: black;
   }
 
   thead{
@@ -45,7 +46,7 @@ h2{
       color:black;
   }
   th {
-    background-color: #218839;
+    background-color: rgb(92, 91, 91);
     color: white;
     width:10%;
     margin-left:100px;
