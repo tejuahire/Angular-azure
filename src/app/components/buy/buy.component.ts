@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { GetDataService } from '../../services/get-data.service';
 import { ToastrService } from 'ngx-toastr';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-buy',
@@ -13,12 +14,22 @@ export class BuyComponent implements OnInit {
   companyId = '';
   quantity = '';
   companyDetails;
+  data:number=Math.floor(Math.random() * 20);
+  price:number;
   constructor(private router: Router, 
               private getDataservice: GetDataService, 
               private _Activatedroute:ActivatedRoute,
-              private toastr: ToastrService) {   }
+              private toastr: ToastrService) { }
 
   ngOnInit() {
+
+    const obs$=interval(1000);
+    obs$.subscribe((d)=>{
+        this.data=this.getDataservice.dostuff(this.data,this.price);
+        console.log(this.data);
+    });
+
+
     this._Activatedroute.paramMap.subscribe(params => { 
       this.companyId = params.get('id'); 
       });
@@ -27,6 +38,7 @@ export class BuyComponent implements OnInit {
       .subscribe(
         data => {
             this.companyDetails = data;
+            this.price=this.companyDetails.current_rate;
         },
         error => {
             console.log(error)

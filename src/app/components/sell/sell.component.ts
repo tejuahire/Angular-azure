@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
+import { interval, Observable } from 'rxjs';
 import { GetDataService } from '../../services/get-data.service';
 
 @Component({
@@ -12,10 +13,19 @@ export class SellComponent implements OnInit {
   quantity = '';
   companyDetails;
   companyId;
-  constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) {   }
+  price:number;
+  data:number=Math.floor(Math.random() * 20);
+  constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) { }
 
 
   ngOnInit() {
+    
+    const obs$=interval(1000);
+    obs$.subscribe((d)=>{
+        this.data=this.getDataservice.dostuff(this.data,this.price);
+    });
+
+    
     this._Activatedroute.paramMap.subscribe(params => { 
       this.companyId = params.get('id'); 
       });
@@ -28,6 +38,7 @@ export class SellComponent implements OnInit {
               if(data[i].company_id==this.companyId)
               {
                 this.companyDetails = data[i];
+                this.price=this.companyDetails.current_rate;
               }
             }
             
@@ -37,9 +48,11 @@ export class SellComponent implements OnInit {
         }
       )
   }
+ 
   sellItem()
   {
-    this.getDataservice.sellShare(localStorage.getItem('username'), this.companyId, this.quantity)
+    console.log(this.data);
+    this.getDataservice.sellShare(localStorage.getItem('username'), this.companyId, this.quantity,this.data)
       .subscribe(
         data => {
             if(data.status=="success")
