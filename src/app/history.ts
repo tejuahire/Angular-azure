@@ -5,7 +5,7 @@ export class History {
     price:number;
     user_id: number;
     quantity:number;
-    date:number;
+    date:string;
     time:string;
     type:string;
 
