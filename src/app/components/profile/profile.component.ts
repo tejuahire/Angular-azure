@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../../services/get-data.service';
+import { Router,ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
@@ -11,9 +12,13 @@ switchToPage=true;
 switchTowithdraw=true;
 amount;
 
-  constructor(private getDataservice: GetDataService,private toastr: ToastrService) { }
+  constructor(private router: Router, 
+    private getDataservice: GetDataService, 
+    private _Activatedroute:ActivatedRoute,
+    private toastr: ToastrService) { }
   userDetails;
   ngOnInit() {
+    this.switchToPage=false;
     this.getDataservice.getUserDeatils(localStorage.getItem('username'))
     .subscribe(
       data => {
@@ -22,8 +27,7 @@ amount;
       error => { }
     )
   }
-
- switchTo(){
+  switchTo(){
     this.switchToPage=true;
     if(!isNaN(Number(this.amount))){
     this.addfund();}
