@@ -1,5 +1,6 @@
 body{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    
 }
 .user-img img{    
     width: 40%;
@@ -37,10 +38,10 @@ body{
     top: 0;
 }
 .profile-head h5{
-    color: #333;
+    color: rgb(250, 249, 249);
 }
 .profile-head h6{
-    color: #0062cc;
+    color: #fefeff;
 }
 .profile-edit-btn{
     border: none;
@@ -96,5 +97,5 @@ body{
 }
 .profile-tab p{
     font-weight: 600;
-    color: #0062cc;
+    color: #030e1a;
 }

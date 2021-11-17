@@ -34,6 +34,7 @@
 }
 .navbarListLogout{
     margin-right: 5%;
+    margin-left: 50%;
 }
 .navbarListLogout>a{
 
@@ -43,3 +44,13 @@
     color:#caccce;
     text-decoration: none;
 }
+.img{
+    margin-left: 10%;
+   }
+   .img1{
+       margin-left: 600%;
+   }
+
+   .logout{
+    margin-left: 500%; 
+   }

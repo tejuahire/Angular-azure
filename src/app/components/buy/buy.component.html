@@ -104,6 +104,10 @@
             <p>Current Rate : {{companyDetails.current_rate}}</p>
         </div>
 
+        <div *ngIf="companyDetails" class="about">
+            <p>Amount : Rs. {{amount}} </p>
+        </div>
+
         <br>
         <div class="">
             <form>
@@ -112,14 +116,19 @@
                     </div>
                     <div class="col-sm-4">                        
                         <input type="text" required class="form-control" name="quantity" 
-                [(ngModel)]=quantity #qty="ngModel" minlength="3" placeholder="Enter Quantity">
+                [(ngModel)]=quantity #qty="ngModel" minlength="3" placeholder="Enter Quantity"
+                (input)="getAmount($event.target.value)">
                     </div>
                     <div class="col-sm-1">
                         
                     </div>
                     <div class="col-sm-4">
                         <button type="submit" [disabled]="!checkQuantity(qty)" class="btn btn-primary buy-btn" (click)="buyItem()">Buy </button>
+                    </div><br><br>
+		 <div class="col-sm-4">
+                        
                     </div>
+                        <button type="cancel" class="btn btn-danger buy-btn" (click)="cancel()">cancel</button>
                 </div>
                 
                
