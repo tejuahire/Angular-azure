@@ -1,3 +1,8 @@
+thead
+{
+    background-color: #3c3d3d;
+}
+
 .heading{
     text-align: center;
     margin-top: 90px;
@@ -5,22 +10,26 @@
     margin-left: 5%;
 }
 .tableContainer{
-    width:90%;
+    width:100%;
     height:500px;
     margin-left: 5%;
     margin-top:3%;
 }
-tbody>tr>td{
-    font-size: 13px;
-}
+
 .coulmn_head{
     position:relative;
+    font-size: small;
 }
 th {
-    background-color: #28a745;
+    background-color: #3c3d3d;
     color: white;
-    width:10%;
-    margin-left:100px;
+    width:20%;
+    margin-left:50px;
+    font-size: 11px;
+}
+tr{
+    background-color: #aeb1b0a6;
+    color: black;
 }
 
 .noData
@@ -41,7 +50,7 @@ th {
 }
 tr:hover
 {
-    background-color: #d3ece5a6 !important;    
+    background-color: #c2c2c2a6 !important;    
 }
 .force-overflow
 {
@@ -72,3 +81,4 @@ fa-icon
     margin-right:80px;
     margin-top:-40px;
 }
+

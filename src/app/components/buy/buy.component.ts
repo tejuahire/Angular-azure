@@ -13,6 +13,8 @@ export class BuyComponent implements OnInit {
   companyId = '';
   quantity = '';
   companyDetails;
+  amount:number;
+  price:number;
   constructor(private router: Router, 
               private getDataservice: GetDataService, 
               private _Activatedroute:ActivatedRoute,
@@ -27,6 +29,7 @@ export class BuyComponent implements OnInit {
       .subscribe(
         data => {
             this.companyDetails = data;
+            this.price=this.companyDetails.current_rate;
         },
         error => {
             console.log(error)
@@ -57,6 +60,10 @@ export class BuyComponent implements OnInit {
       return false;
     else if(Number(qty.value) <= Number(this.companyDetails.volume))
       return true;
+  }
+
+  getAmount(quantity:number){
+    this.amount = this.price * quantity;
   }
 }
 
