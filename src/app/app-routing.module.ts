@@ -19,6 +19,9 @@ import { AddStocksComponent } from './components/add-stocks/add-stocks.component
 import { UpdateCompanyComponent } from './components/update-company/update-company.component';
 
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { GetallClientsComponent } from './components/getall-clients/getall-clients.component';
+import { GethistoryComponent } from './components/gethistory/gethistory.component';
+
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -39,6 +42,8 @@ export const AppRoutes: Routes = [
   { path: 'admin',component: AdminComponent },
   { path: 'addCompany',component: AddStocksComponent },
   { path: 'updatecompany/:company_id',component: UpdateCompanyComponent },
+  { path: 'getallclient',component:GetallClientsComponent },
+  { path: 'gethistory/:email',component:GethistoryComponent},
   { path: 'history', component: HistoryComponent },
 ];
 

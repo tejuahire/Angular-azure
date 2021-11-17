@@ -1,13 +1,12 @@
-export class History {
+export class Clienthistory {
     index:number;
-    sno: number;
-    company_name:string;
+    sno:number;
+    user_id:string;
     company_id:number;
+    company_name:string;
     price:number;
-    user_id: number;
     quantity:number;
-    date:number;
+    data:string;
     time:string;
     type:string;
-
 }

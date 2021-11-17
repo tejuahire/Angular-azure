@@ -31,6 +31,8 @@ import { AddStocksComponent } from './components/add-stocks/add-stocks.component
 import { AdminComponent } from './components/admin/admin.component';
 import { UpdateCompanyComponent } from './components/update-company/update-company.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { GetallClientsComponent } from './components/getall-clients/getall-clients.component';
+import { GethistoryComponent } from './components/gethistory/gethistory.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,12 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
    UpdateCompanyComponent,
   
  AboutusComponent,
+  
+ GetallClientsComponent,
+  
+ GethistoryComponent,
+  
+
   ],
   imports: [
     BrowserModule,

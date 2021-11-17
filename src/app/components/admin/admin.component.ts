@@ -39,4 +39,9 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['/updatecompany',company_id]);
   }
 
+  gotoAllClient()
+  {
+    this.router.navigate(['/getallclient']);
+  }
+
 }

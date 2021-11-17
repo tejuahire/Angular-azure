@@ -27,6 +27,11 @@ export class GetDataService {
       return this.http.get(this.url);       
   }
 
+  getAllclient():Observable<any>
+  {
+    this.url=this.baseUrl+"getAllclient";
+    return this.http.get(this.url);
+  }
   getHistory(email):Observable<any> {
     this.url = this.baseUrl + "history?email=" + email;
     return this.http.get(this.url);
@@ -47,7 +52,9 @@ export class GetDataService {
 
   getMyShares(email)
   {
+    console.log(email);
     this.url = this.baseUrl + "my-share/?email=" + email;
+    
     return this.http.get<MyShareResponse>(this.url);     
   }
 
