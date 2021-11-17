@@ -10,10 +10,11 @@ import { GetDataService } from '../../services/get-data.service';
 })
 export class SellComponent implements OnInit {
 
-  quantity = '';
+  quantity:number=0 ;
   companyDetails;
   companyId;
   price:number;
+  amount:number;
   data:number=Math.floor(Math.random() * 20);
   constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) { }
 
@@ -23,7 +24,8 @@ export class SellComponent implements OnInit {
     const obs$=interval(1000);
     obs$.subscribe((d)=>{
         this.data=this.getDataservice.dostuff(this.data,this.price);
-    });
+        this.getAmount(this.data,this.quantity);
+      });
 
     
     this._Activatedroute.paramMap.subscribe(params => { 
@@ -70,6 +72,13 @@ export class SellComponent implements OnInit {
       return false;
     else
       return true;
+  }
+  getQuantity(quantity:number){
+    this.quantity=quantity;
+  }
+
+  getAmount(data:number,quantity:number){
+    this.amount = data * quantity;
   }
   cancel(){
     this.router.navigate(['my-shares'])

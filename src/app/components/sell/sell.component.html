@@ -105,10 +105,13 @@
         <div *ngIf="companyDetails" class=" d-flex justify-content-center">
             <div class="about">
                 <div class="sell-heading sell-heading1">Current Rate :</div><div class="sell-value"> {{ data }}</div><br><!--companyDetails.current_rate-->
-                <div class="sell-heading">Available Quantity :</div><div class="sell-value"> {{companyDetails.quantity}}</div>
+                <div class="sell-heading">Available Quantity :</div><div class="sell-value"> {{companyDetails.quantity}}</div> 
             </div>
         </div>
 
+        <div *ngIf="companyDetails" id = "amount">
+            <p style="color:red;">  Amount :  Rs. {{amount}} </p>
+        </div>
         <br>
         <div class="">
             <form>
