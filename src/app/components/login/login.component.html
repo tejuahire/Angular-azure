@@ -70,6 +70,9 @@
         </div>
     </div>
     </div>
+        <div id="sect1">
+
+
         <div *ngIf=!switchToLoginPage class="register bgimg">
             <br/><br/>
         
@@ -83,7 +86,7 @@
                     <div class="mailId">
                             <label>Mail ID</label>
                             <input type="email" required class="form-control" name="mailid" 
-                                [(ngModel)]=mailid #mail="ngModel" email>
+                                [(ngModel)]=mailid #mail="ngModel" email placeholder="ex. abc@gmail.com">
                             
                             <div *ngIf="mail.invalid" class="text-danger warningMessage">
                                 <div *ngIf="mail.errors.email">
@@ -96,7 +99,7 @@
                     <div class="username">
                         <br/><label >UserName</label>
                         <input type="text" required class="form-control" name="username" 
-                            [(ngModel)]="username" #user="ngModel" minlength="3">
+                            [(ngModel)]="username" #user="ngModel" minlength="3" placeholder="UserName">
         
                         <div *ngIf="user.invalid" class="text-danger warningMessage">
                             <div *ngIf="true && user.errors.minlength">
@@ -109,7 +112,7 @@
                     <div class="adhar">
                         <br/><label >Phone Number</label>
                         <input type="text" required class="form-control" name="phone"  
-                        [(ngModel)]="phone" #ph="ngModel" pattern="[0-9]*" minlength="10" maxlength="10" >
+                        [(ngModel)]="phone" #ph="ngModel" pattern="[0-9]*" minlength="10" maxlength="10" placeholder="ex. 1234-567-890" >
         
                         <div *ngIf="ph.invalid" class="text-danger warningMessage">
                             <div *ngIf="ph.errors.pattern">
@@ -123,7 +126,7 @@
                     
                     <div class="password">
                         <br/><label>Password</label>
-                        <input type="password" required class="form-control" name="password" [(ngModel)]="password" #pass="ngModel">
+                        <input type="password" required class="form-control" name="password" [(ngModel)]="password" #pass="ngModel" placeholder="Password...">
         
                         
                         <div *ngIf="pass.invalid" class="text-danger warningMessage">
@@ -133,14 +136,14 @@
                         </div>
                     </div>
                     </div>
-                    
+
                     <br/><button type="submit" [disabled]="checkValidUser(mail,user,ph,pass)" class="btn btn-primary">Register</button>
                     <p>
-                        If you already have an account
+                        If you already have an account.
                         <a (click)="switchToLogin()" class="loginButton">Login</a>
-                    </p>  
                 </div>
             </form>
         
+        </div>
         </div>
         
