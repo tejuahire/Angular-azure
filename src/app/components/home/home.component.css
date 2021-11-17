@@ -72,78 +72,145 @@ fa-icon
 }
 
 /* Jeevan Edit start */
-img {
-    border-radius: 8px;
-    width: 250px;
-    height: 450px;
-  }
+
   h2.w3-wide{
     text-align: center;
   }
-  /* .column {
-    float: left;
-    width: 33.33%;
-    padding: 15px;
-  } */
-  
-  /* Clearfix (clear floats) */
-  /* .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  } */
-  /* .desimage{
-
-  }
-  .missionone{
-      padding: 250px;
-  } */
+ 
  .col{
      padding: 0%;
      margin: 0%;
  }
- .text-sm {
-    font-size: .875rem!important;
+ @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+/**{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins'sans-serif;
 }
-.icon-shape i, .icon-shape svg {
-    font-size: 1.25rem;
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #f3f3f3;
+	overflow: hidden;
+}*/
+.isomerticcard{
+	margin-left: 40px;
+	margin-top: 40px;
+	position: relative;
+	width: 1050px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	transition: 0.5%;
+	transform: skewY(-1deg);
+    background: #f3f3f3;
 }
-.fa, .far, .fas {
-    font-family: "Font Awesome 5 Free";
+.isomerticcard .card
+{
+	position: relative;
+	width: 300px;
+	height:400px;
+	background: #fff;
+	transition: 0.5s;
 }
-.fa, .fab, .fal, .far, .fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
+
+.isomerticcard .card:before
+{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #00c0f6;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+
 }
-i {
-    font-style: italic;
+.isomerticcard .card:after
+{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 15px;
+    height: 400px;
+    background: #00c0f6;
+    transform-origin: left;
+    transform: skewY(45deg);
+    transition: 0.5s;
+    border-bottom: 350px solid #d9d9d9;
+
 }
-*, ::after, ::before {
-    box-sizing: border-box;
+
+.isomerticcard .card:hover
+{
+	transform:translateY(-40px) ;
 }
-.icon-shape {
-    display: inline-flex;
-    padding: 12px;
-    text-align: center;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
+.isomerticcard .card .imgBx
+{
+	position: relative;
+	width: 300px;
+	height: 200px;
+	background:#00c7ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
 }
-.icon-shape i, .icon-shape svg {
-    font-size: 1.25rem;
+.isomerticcard .card .imgBX img{
+	max-width:100px;
 }
-/* .fa-chart-pie:before {
-    content: "\f200";
-} */
-.card {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
+.isomerticcard .card .imgBX h2
+{
+	position: relative;
+	color:#fff;
+	margin-top: 10px;
 }
- 
+.isomerticcard .card .content
+{
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  color: #777;
+  text-align: center;
+}
+/*.container .card .content:before
+{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100px;
+	height: 400px;
+	background:linear-gradient(transparent,rgba(0,0,0,.1));
+}*/
+
+.parallax {
+    margin-top: 40px;
+    /* The image used */
+    background-image: url("https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/stocks.74948e96.png");
+  
+    /* Set a specific height */
+    min-height: 300px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+
+
+
+
+
