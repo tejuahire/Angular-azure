@@ -42,8 +42,9 @@ export class BuyComponent implements OnInit {
     this.getDataservice.buyShare( localStorage.getItem('username'), this.companyId, this.quantity)
       .subscribe(
         data => {console.log(data)
-          if(data.status=="success")
-            this.router.navigate(['my-shares'])          
+          if(data.status=="success"){
+	    alert("The share buy successfully");
+            this.router.navigate(['my-shares'])  }        
           else if(data.status=="insufficient balance")
             this.toastr.error("",'Insufficient balance in your account',{positionClass:"toast-bottom-center"});
         },
@@ -64,6 +65,9 @@ export class BuyComponent implements OnInit {
 
   getAmount(quantity:number){
     this.amount = this.price * quantity;
+  }
+ cancel(){
+    this.router.navigate(['my-shares']);
   }
 }
 
