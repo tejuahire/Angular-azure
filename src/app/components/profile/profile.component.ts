@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../../services/get-data.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -10,7 +11,7 @@ switchToPage=true;
 switchTowithdraw=true;
 amount;
 
-  constructor(private getDataservice: GetDataService) { }
+  constructor(private getDataservice: GetDataService,private toastr: ToastrService) { }
   userDetails;
   ngOnInit() {
     this.getDataservice.getUserDeatils(localStorage.getItem('username'))
