@@ -74,12 +74,18 @@
                                                 <p>{{userDetails[0].phone}}</p>
                                             </div>
                                         </div>
+ 					<div class="container">
+                                        <div *ngIf=switchToPage>                         
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width: 120px;" name="amount"  minlength="5" maxlength="5" [(ngModel)]=amount placeholder="Enter Amount">  
+                                        </div>
+                                        </div>
+                                        <br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <button style="border-radius: 20px; width: 100px;" type="button" class="btn btn-dark sell">Add Fund</button>
+                                                <button style="border-radius: 20px; width: 100px;" type="button" class="btn btn-dark sell" (click)="switchTo()">Add Fund</button>
                                             </div>
                                             <div class="col-md-6">
-                                                <button style="border-radius: 20px; width: 100px;" type="button" class="btn btn-dark sell">Withdraw</button>
+                                                <button style="border-radius: 20px; width: 100px;" type="button" class="btn btn-dark sell" (click)="switchTowi()">Withdraw</button>
                                             </div>
 
                                         </div> <br>

@@ -6,6 +6,9 @@ import { GetDataService } from '../../services/get-data.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+switchToPage=true;
+switchTowithdraw=true;
+amount;
 
   constructor(private getDataservice: GetDataService) { }
   userDetails;
@@ -19,4 +22,49 @@ export class ProfileComponent implements OnInit {
     )
   }
 
+ switchTo(){
+    this.switchToPage=true;
+    if(!isNaN(Number(this.amount))){
+    this.addfund();}
+  }
+  switchTowi(){
+    this.switchToPage=true;
+    if(!isNaN(Number(this.amount))){
+    this.withdraw();}
+  }
+
+  addfund() 
+  {
+    this.getDataservice.addfund( localStorage.getItem('username'), this.amount)
+      .subscribe(
+        data => {console.log(data)
+          if(data.status=="success"){
+	    alert("The amount successfully added"); 
+      window.location.reload();
+     }        
+          else
+            this.toastr.error("",'error',{positionClass:"toast-bottom-center"});
+        },
+        error => {
+            console.log(error)
+        }
+      )
+  }
+  withdraw() 
+  {
+    this.getDataservice.withdraw( localStorage.getItem('username'), this.amount)
+      .subscribe(
+        data => {console.log(data)
+          if(data.status=="success"){
+	    alert("The amount successfully withdraw");
+      window.location.reload();
+     }        
+          else
+            this.toastr.error("",'error',{positionClass:"toast-bottom-center"});
+        },
+        error => {
+            console.log(error)
+        }
+      )
+  }
 }
