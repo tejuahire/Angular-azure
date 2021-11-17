@@ -34,7 +34,8 @@ export class MySharesComponent implements OnInit {
   }
   
   goToDetailedView(companyId)
-  {    
+  {   
+    
     this.router.navigate(['view',companyId])
   }
 }

@@ -56,6 +56,7 @@ export class SellComponent implements OnInit {
       .subscribe(
         data => {
             if(data.status=="success")
+		alert("The share sell successfully");
               this.router.navigate(['my-shares'])
         },
         error => {
@@ -69,5 +70,8 @@ export class SellComponent implements OnInit {
       return false;
     else
       return true;
+  }
+  cancel(){
+    this.router.navigate(['my-shares'])
   }
 }

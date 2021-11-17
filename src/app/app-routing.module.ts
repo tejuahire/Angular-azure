@@ -14,11 +14,19 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { HistoryComponent } from './components/history/history.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AdminComponent } from './components/admin/admin.component';
+
 import { AddStocksComponent } from './components/add-stocks/add-stocks.component';
+import { UpdateCompanyComponent } from './components/update-company/update-company.component';
+
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { GetallClientsComponent } from './components/getall-clients/getall-clients.component';
+import { GethistoryComponent } from './components/gethistory/gethistory.component';
+
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
+  { path: 'about', component: AboutusComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'watch', component: WatchListComponent },
   { path: 'buy/:id', component: BuyComponent },
@@ -33,7 +41,9 @@ export const AppRoutes: Routes = [
   { path: 'adminlogin',component: AdminloginComponent },
   { path: 'admin',component: AdminComponent },
   { path: 'addCompany',component: AddStocksComponent },
-
+  { path: 'updatecompany/:company_id',component: UpdateCompanyComponent },
+  { path: 'getallclient',component:GetallClientsComponent },
+  { path: 'gethistory/:email',component:GethistoryComponent},
   { path: 'history', component: HistoryComponent },
 ];
 

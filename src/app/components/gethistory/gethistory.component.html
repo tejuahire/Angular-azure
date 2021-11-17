@@ -1,8 +1,10 @@
-<div class="heading">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
+<div class="heading">
+    
     <div *ngIf="history" class="table-responsive-md " id="">
-        <h2>Transaction </h2> 
-  <button type="submit"  class="btn btn-primary buy-btn" (click)="exportexcel()" >Export to Excel </button>
+        <button type="submit"  class="fas fa-arrow-alt-circle-down" (click)="exportexcel()" style="border: 0ch; background-color: white;" > </button>
+  
         
           <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
             <thead>

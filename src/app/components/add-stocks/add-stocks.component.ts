@@ -21,8 +21,17 @@ export class AddStocksComponent implements OnInit {
    
   }
 
+  checkValid(open_rate,close_rate,least_rate,peak_rate,year_low,year_high,p_e_ratio,market_cap,volume,current_rate)
+    {
+        if(open_rate.errors ||close_rate.errors ||least_rate.errors ||peak_rate.errors ||year_low.errors||year_high.errors ||p_e_ratio.errors ||market_cap.errors ||volume.errors ||current_rate.errors)
+            return true;
+        else
+            return false;
+    }
+
+
   saveCompany() {
-    console.log('working' + this.company.name);
+    
     this.getDataService.addCompany(this.company).subscribe(data => {
       if (data.status === 'success') {
         this.route.navigate(['admin']);
@@ -33,5 +42,9 @@ export class AddStocksComponent implements OnInit {
     }
 
     )
+  }
+  gotoBack()
+  {
+    this.route.navigate(['admin']);
   }
 }

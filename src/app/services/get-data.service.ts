@@ -27,6 +27,11 @@ export class GetDataService {
       return this.http.get(this.url);       
   }
 
+  getAllclient():Observable<any>
+  {
+    this.url=this.baseUrl+"getAllclient";
+    return this.http.get(this.url);
+  }
   getHistory(email):Observable<any> {
     this.url = this.baseUrl + "history?email=" + email;
     return this.http.get(this.url);
@@ -47,7 +52,9 @@ export class GetDataService {
 
   getMyShares(email)
   {
+    console.log(email);
     this.url = this.baseUrl + "my-share/?email=" + email;
+    
     return this.http.get<MyShareResponse>(this.url);     
   }
 
@@ -103,5 +110,18 @@ export class GetDataService {
     console.log(price);
    return Math.floor(Math.random() * price);
   }
+  getCompanyById(company_id:number) : Observable<CompanyModel>{
+    this.url=this.baseUrl+"getCompanyById?id="+company_id;
+    return this.http.get<CompanyModel>(this.url);
+  }
+
+  updateCompany(company_id:number,companyModel:CompanyModel):Observable<object>
+  {
+    this.url=this.baseUrl+"updateCompany";
+    return this.http.put<CompanyModel>(`${this.url}/${company_id}`,companyModel);
+   
+
+  }
+
  
 }
