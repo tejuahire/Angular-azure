@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { GetDataService } from '../../services/get-data.service';
 import { AuthenticationService } from '../../services/authenticate.service'
 import { Company } from 'src/app/company';
-import { Observable } from "rxjs";
+import { interval, Observable } from "rxjs";
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -17,18 +17,44 @@ export class HomeComponent implements OnInit {
   companyes: Observable<Company[]>;
   // companyes :any=[];
   name:any;
+  data:number=Math.floor(Math.random() * 20);
+  price:number;
 
 @Input()
   companyDetails;
+  private _Activatedroute: any;
+  companyId: any;
   constructor(private router: Router, 
               private getDataservice: GetDataService, 
               private toastr: ToastrService,
-              private loginService:AuthenticationService) { }
+              private loginService:AuthenticationService) { const obs$=interval(1000);
+                obs$.subscribe((d)=>{
+                    this.data=this.getDataservice.dostuff(this.data,20);
+                    console.log(this.data);
+                });
+            }
               watchList;
   ngOnInit() {
 
+    
     this.loadData();
     this.reloadData();
+
+    this._Activatedroute.paramMap.subscribe(params => { 
+      this.companyId = params.get('id'); 
+      });
+
+      this.getDataservice.getOneCompany(this.companyId)
+      .subscribe(
+        data => {
+            this.companyDetails = data;
+            this.price=this.companyDetails.current_rate;
+        },
+        error => {
+            console.log(error)
+        }
+      )
+    
     // this.getDataservice.getAllCompany()
     // .subscribe(
     //   data => {
@@ -53,6 +79,7 @@ export class HomeComponent implements OnInit {
       data => {
         if(data.length)
           this.watchList = data;
+          
       },
       error => {
           console.log(error)
