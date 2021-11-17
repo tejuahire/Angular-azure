@@ -38,7 +38,7 @@
 
 .background{
 
-    position: fixed;
+    position: relative;
     display: flex;
     justify-content: left;
     align-items: left;
