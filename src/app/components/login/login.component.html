@@ -12,15 +12,13 @@
             <form (ngSubmit)="checkLogin(mail,pass)">
                 <div class="card align-items-center container containerLogin">
                     <div class="formElements">
-                        <div *ngIf=invalidLogin class="text-danger">
-                                <br/> {{errorMessage}}<br/><br/>
-                        </div>
                         <div class="mailId">
-                            <br/><br/>
                             <span class="formicon"><img src="assets/images/login.png" width="70" height="70"></span>
+                            <span class="formtagline"><h3 style="text-align: center;">USER LOGIN</h3></span>
                             <br/>
-                            <span class="formtagline"><h1>USER LOGIN</h1></span>
-                            <br/>
+                            <div *ngIf=invalidLogin class="text-danger">
+                                {{errorMessage}}
+                           </div>
                             <label>User Name</label>
                             <input type="email" required class="form-control" name="mailid" 
                                 [(ngModel)]=mailid #mail="ngModel" minlength="3" email >
@@ -51,12 +49,11 @@
                     <br/>
                      <div class="btn-wrapper text-center">
                         <a href="https://github.com/login" class="btn btn-neutral btn-icon">
-                          <span class="btn-inner--icon"><img src="data:image/png;base64,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" style="height: 30px; width: 30px;"></span>
-                          <span class="btn-inner--text">Github</span>
+                            <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>                          <span class="btn-inner--text">Github</span>
                         </a>
                         <a href="https://accounts.google.com/login/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="btn btn-neutral btn-icon">
-                          <span class="btn-inner--icon"><img src="data:image/png;base64,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" style="height: 20px; width: 20px;"></span>
-                          <span class="btn-inner--text">Google</span>
+                      <img src="https://img.icons8.com/color/30/000000/google-logo.png"/>           
+                        <span class="btn-inner--text">Google</span>
                         </a>
                       </div>
                     
@@ -73,6 +70,9 @@
         </div>
     </div>
     </div>
+        <div id="sect1">
+
+
         <div *ngIf=!switchToLoginPage class="register bgimg">
             <br/><br/>
         
@@ -86,7 +86,7 @@
                     <div class="mailId">
                             <label>Mail ID</label>
                             <input type="email" required class="form-control" name="mailid" 
-                                [(ngModel)]=mailid #mail="ngModel" email>
+                                [(ngModel)]=mailid #mail="ngModel" email placeholder="ex. abc@gmail.com">
                             
                             <div *ngIf="mail.invalid" class="text-danger warningMessage">
                                 <div *ngIf="mail.errors.email">
@@ -99,7 +99,7 @@
                     <div class="username">
                         <br/><label >UserName</label>
                         <input type="text" required class="form-control" name="username" 
-                            [(ngModel)]="username" #user="ngModel" minlength="3">
+                            [(ngModel)]="username" #user="ngModel" minlength="3" placeholder="UserName">
         
                         <div *ngIf="user.invalid" class="text-danger warningMessage">
                             <div *ngIf="true && user.errors.minlength">
@@ -112,7 +112,7 @@
                     <div class="adhar">
                         <br/><label >Phone Number</label>
                         <input type="text" required class="form-control" name="phone"  
-                        [(ngModel)]="phone" #ph="ngModel" pattern="[0-9]*" minlength="10" maxlength="10" >
+                        [(ngModel)]="phone" #ph="ngModel" pattern="[0-9]*" minlength="10" maxlength="10" placeholder="ex. 1234-567-890" >
         
                         <div *ngIf="ph.invalid" class="text-danger warningMessage">
                             <div *ngIf="ph.errors.pattern">
@@ -126,7 +126,7 @@
                     
                     <div class="password">
                         <br/><label>Password</label>
-                        <input type="password" required class="form-control" name="password" [(ngModel)]="password" #pass="ngModel">
+                        <input type="password" required class="form-control" name="password" [(ngModel)]="password" #pass="ngModel" placeholder="Password...">
         
                         
                         <div *ngIf="pass.invalid" class="text-danger warningMessage">
@@ -136,14 +136,14 @@
                         </div>
                     </div>
                     </div>
-                    
+
                     <br/><button type="submit" [disabled]="checkValidUser(mail,user,ph,pass)" class="btn btn-primary">Register</button>
                     <p>
-                        If you already have an account
+                        If you already have an account.
                         <a (click)="switchToLogin()" class="loginButton">Login</a>
-                    </p>  
                 </div>
             </form>
         
+        </div>
         </div>
         
