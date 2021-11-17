@@ -34,5 +34,9 @@ export class AdminComponent implements OnInit {
 
     )
   }
+  updateCompany(company_id : number)
+  {
+    this.router.navigate(['/updatecompany',company_id]);
+  }
 
 }

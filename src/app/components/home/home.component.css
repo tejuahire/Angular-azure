@@ -82,6 +82,7 @@ fa-icon
      padding: 0%;
      margin: 0%;
  }
+<<<<<<< HEAD
  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 /**{
 	margin: 0;
@@ -207,3 +208,51 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
   }
+=======
+.text-sm {
+    font-size: .875rem!important;
+}
+.icon-shape i, .icon-shape svg {
+    font-size: 1.25rem;
+}
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+}
+.fa, .fab, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+i {
+    font-style: italic;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.icon-shape {
+    display: inline-flex;
+    padding: 12px;
+    text-align: center;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.icon-shape i, .icon-shape svg {
+    font-size: 1.25rem;
+}
+/* .fa-chart-pie:before {
+    content: "\f200";
+} */
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+}
+ 
+ 
+>>>>>>> 2ae7bc5fe0bb6f8a2e903c8fa08f756c633feb66

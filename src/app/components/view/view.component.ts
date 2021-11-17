@@ -36,14 +36,10 @@ export class ViewComponent implements OnInit {
   }
 
 
-
-
-
-  
-  public lineChartData: ChartDataSets[] = [
-    { data: [380, 350, 370, 390, 360, 370, 400, 380, 390], label: 'IBM', yAxisID: 'y-axis-1' }
+ public lineChartData: ChartDataSets[] = [
+    { data: [380, 350, 370, 390, 360, 370, 400, 380, 390], label: 'company', yAxisID: 'y-axis-1' }
   ];
-  public lineChartLabels: Label[] = ['9 AM', '10 AM', '11 AM', '12 AM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM'];
+  public lineChartLabels: Label[] = ['9:15 AM', '10 AM', '11 AM', '11:30 AM', '12 PM', '1 PM', '2 PM', '3 PM', '3:30 PM'];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {
