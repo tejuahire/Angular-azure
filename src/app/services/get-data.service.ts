@@ -17,7 +17,7 @@ interface responseStatus {
 })
 export class GetDataService {
 
-  baseUrl = "http://localhost:9000/";
+  baseUrl = "http://localhost:8080/";
   url="";
   constructor(private http : HttpClient) { }
 
