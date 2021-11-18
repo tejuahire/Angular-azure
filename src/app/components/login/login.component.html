@@ -119,7 +119,6 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
 <div id="sect1">
   <div *ngIf="!switchToLoginPage" class="register bgimg">
     <br /><br />
@@ -227,6 +226,8 @@
           <a (click)="switchToLogin()" class="loginButton">Login</a>
         </p>
       </div>
+      <p style="margin-top: 50px;">
+        <app-footer></app-footer></p>
     </form>
   </div>
 </div>
