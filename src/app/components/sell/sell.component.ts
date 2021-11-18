@@ -16,17 +16,15 @@ export class SellComponent implements OnInit {
   max_price:number;
   min_price:number;
   amount:number;
-  data:number;
+  data:number=Math.floor(Math.random() * 10);
   constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) { }
 
 
   ngOnInit() {
     
-    const obs$=interval(1000);
+    const obs$=interval(2000);
     obs$.subscribe((d)=>{
-        console.log(this.max_price);
-        console.log(this.min_price);
-        this.data=this.getDataservice.dostuff(this.max_price,this.min_price);
+        this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
         this.getAmount(this.data,this.quantity);
       });
 

@@ -105,9 +105,7 @@ export class GetDataService {
 
   }
 
-  dostuff(max_price,min_price):number{
-    console.log(max_price);
-    console.log(min_price);
+  getRandomNum(max_price,min_price):number{
    return Math.floor(Math.random() * max_price + min_price);
   }
   

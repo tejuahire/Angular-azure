@@ -14,11 +14,10 @@ export class BuyComponent implements OnInit {
   companyId = '';
   quantity:number=0 ;
   companyDetails;
-  data:number=Math.floor(Math.random() * 20);
+  data:number=Math.floor(Math.random() * 10);
   max_price:number;
   min_price:number;
   amount:number;
-  price:number;
   constructor(private router: Router, 
               private getDataservice: GetDataService, 
               private _Activatedroute:ActivatedRoute,
@@ -26,11 +25,10 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
 
-    const obs$=interval(1000);
+    const obs$=interval(2000);
     obs$.subscribe((d)=>{
-        this.data=this.getDataservice.dostuff(this.max_price,this.min_price);
+        this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
         this.getAmount(this.data,this.quantity);
-        console.log(this.data);
     });
 
 

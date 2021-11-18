@@ -15,13 +15,11 @@ import { filter } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
 
   companyes: Observable<Company[]>;
-  // companyes :any=[];
   name:any;
-  // data:number=Math.floor(Math.random() * 20);
-  // max_price:number;
-  // min_price:number;
+  num:number;
+ 
 
-@Input()
+@Input()git
   companyDetails;
   private _Activatedroute: any;
   companyId: any;
@@ -32,42 +30,9 @@ export class HomeComponent implements OnInit {
               private loginService:AuthenticationService) {}
               watchList;
   ngOnInit() {
-
-    // const obs$=interval(1000);
-    // obs$.subscribe((d)=>{
-    //     this.data=this.getDataservice.dostuff(this.max_price,this.min_price);
-    //     console.log(this.data);
-    // });
     
     this.loadData();
     this.reloadData();
-
-    // this._Activatedroute.paramMap.subscribe(params => { 
-    //   this.companyId = params.get('id'); 
-    //   });
-
-    //   this.getDataservice.getOneCompany(this.companyId)
-    //   .subscribe(
-    //     data => {
-    //         this.companyDetails = data;
-    //         this.max_price=this.companyDetails.year_high;
-    //         this.min_price=this.companyDetails.year_low;
-    //     },
-    //     error => {
-    //         console.log(error)
-    //     }
-    //   )
-    
-    // this.getDataservice.getAllCompany()
-    // .subscribe(
-    //   data => {
-    //       this.companyDetails = data;
-    //   },
-    //   error => {
-    //       console.log(error)
-    //   }
-    // )
-   
   }
 
 
@@ -82,7 +47,6 @@ export class HomeComponent implements OnInit {
       data => {
         if(data.length)
           this.watchList = data;
-          
       },
       error => {
           console.log(error)
