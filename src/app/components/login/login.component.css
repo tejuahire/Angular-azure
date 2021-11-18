@@ -63,33 +63,12 @@
   margin-top: 25px;
 }
 .registerButton {
-  color: #fff !important;
+  color: black !important;
   cursor: pointer;
   margin-top: 10px;
 }
 
 /* register */
-
-#sect1 {
-  height: 650 px;
-
-  color: #fff;
-  background-image: url("https://th.bing.com/th/id/R.25d5323f02aa65ed1851644492428693?rik=XFbkPtOjp3Mzog&riu=http%3a%2f%2fhostcompanion.com%2fimages%2fbg-page.jpg&ehk=SU7YPgwRmv7nydCYTRYL%2fd1pPuKIcuHnvscGix6XL%2f8%3d&risl=&pid=ImgRaw&r=0");
-
-  /* background-color:lightyellow; */
-
-  background-size: 50%;
-
-  background-position: 50% 50%;
-
-  width: auto;
-
-  background-size: cover;
-
-  background-repeat: no-repeat;
-
-  display: block;
-}
 
 .headingRegister {
   text-align: center;
