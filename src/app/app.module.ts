@@ -33,6 +33,7 @@ import { UpdateCompanyComponent } from './components/update-company/update-compa
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { GetallClientsComponent } from './components/getall-clients/getall-clients.component';
 import { GethistoryComponent } from './components/gethistory/gethistory.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,8 @@ import { GethistoryComponent } from './components/gethistory/gethistory.componen
  GetallClientsComponent,
   
  GethistoryComponent,
+  
+ ContactusComponent,
   
 
   ],
