@@ -12,7 +12,7 @@ switchToPage=true;
 switchTowithdraw=true;
 amount;
 
-  constructor(private router: Router, 
+  constructor( 
     private getDataservice: GetDataService, 
     private _Activatedroute:ActivatedRoute,
     private toastr: ToastrService) { }
