@@ -13,22 +13,22 @@ export class SellComponent implements OnInit {
   quantity:number=0 ;
   companyDetails;
   companyId;
-  max_price:number;
-  min_price:number;
+  // max_price:number;
+  // min_price:number;
   amount:number;
-  data:number=Math.floor(Math.random() * 10);
+  current_rate:number;
+  // data:number=Math.floor(Math.random() * 10);
   constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) { }
 
 
   ngOnInit() {
     
-    const obs$=interval(2000);
-    obs$.subscribe((d)=>{
-        this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
-        this.getAmount(this.data,this.quantity);
-      });
+    // const obs$=interval(2000);
+    // obs$.subscribe((d)=>{
+    //     this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
+    //     this.getAmount(this.data,this.quantity);
+    //   });
 
-    
     this._Activatedroute.paramMap.subscribe(params => { 
       this.companyId = params.get('id'); 
       });
@@ -41,8 +41,9 @@ export class SellComponent implements OnInit {
               if(data[i].company_id==this.companyId)
               {
                 this.companyDetails = data[i];
-                this.max_price=this.companyDetails.year_high;
-                this.min_price=this.companyDetails.year_low;
+                this.current_rate=this.companyDetails.current_rate;
+                // this.max_price=this.companyDetails.year_high;
+                // this.min_price=this.companyDetails.year_low;
               }
             }
             
@@ -55,8 +56,7 @@ export class SellComponent implements OnInit {
  
   sellItem()
   {
-    console.log(this.data);
-    this.getDataservice.sellShare(localStorage.getItem('username'), this.companyId, this.quantity,this.data)
+    this.getDataservice.sellShare(localStorage.getItem('username'), this.companyId, this.quantity)
       .subscribe(
         data => {
             if(data.status=="success")
@@ -76,11 +76,12 @@ export class SellComponent implements OnInit {
       return true;
   }
   getQuantity(quantity:number){
-    this.quantity=quantity;
+    this.amount = this.current_rate * quantity;
+
   }
 
   getAmount(data:number,quantity:number){
-    this.amount = data * quantity;
+    
   }
   cancel(){
     this.router.navigate(['my-shares'])
