@@ -122,6 +122,15 @@ export class GetDataService {
    
 
   }
-
+addfund(email,amount)
+  {
+    this.url = this.baseUrl + "add-fund";
+    return this.http.post<responseStatus>(this.url, { "email":email, "amount_left":amount} );               
+  }
+  withdraw(email,amount)
+  {
+    this.url = this.baseUrl + "withdraw";
+    return this.http.post<responseStatus>(this.url, { "email":email, "amount_left":amount} );               
+  }
  
 }

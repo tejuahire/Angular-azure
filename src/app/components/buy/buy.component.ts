@@ -12,7 +12,7 @@ import { interval } from 'rxjs';
 export class BuyComponent implements OnInit {
 
   companyId = '';
-  quantity = '';
+  quantity:number=0 ;
   companyDetails;
   data:number=Math.floor(Math.random() * 20);
   amount:number;
@@ -27,6 +27,7 @@ export class BuyComponent implements OnInit {
     const obs$=interval(1000);
     obs$.subscribe((d)=>{
         this.data=this.getDataservice.dostuff(this.data,this.price);
+        this.getAmount(this.data,this.quantity);
         console.log(this.data);
     });
 
@@ -73,8 +74,12 @@ export class BuyComponent implements OnInit {
       return true;
   }
 
-  getAmount(quantity:number){
-    this.amount = this.price * quantity;
+  getQuantity(quantity:number){
+    this.quantity=quantity;
+  }
+
+  getAmount(data:number,quantity:number){
+    this.amount = data * quantity;
   }
  cancel(){
     this.router.navigate(['my-shares']);

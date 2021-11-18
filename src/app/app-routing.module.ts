@@ -21,6 +21,7 @@ import { UpdateCompanyComponent } from './components/update-company/update-compa
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { GetallClientsComponent } from './components/getall-clients/getall-clients.component';
 import { GethistoryComponent } from './components/gethistory/gethistory.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 
 
@@ -28,6 +29,7 @@ export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutusComponent },
+  { path: 'contact', component: ContactusComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'watch', component: WatchListComponent },
   { path: 'buy/:id', component: BuyComponent },

@@ -6,7 +6,8 @@
     padding-left:50px;
     padding-top: 30px;
     margin-top:-2%;
-    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.4);
+    background-color: #E2E0E0
 }
 .heading
 {
@@ -15,12 +16,12 @@
 .company-details label
 {
     font-weight: 600;
-    color:orange
+    color:rgb(43, 43, 40)
 }
 .company-details p
 {
     font-weight: 600;
-    color:rebeccapurple
+    color:rgb(202, 108, 46)
 }
 .buy-btn
 {
