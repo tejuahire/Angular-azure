@@ -32,6 +32,8 @@ export class AuthenticationService
       return !(user === null)
     }
 
+    
+
     logOut() {
       localStorage.removeItem('username')
     }

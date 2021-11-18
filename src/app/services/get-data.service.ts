@@ -82,11 +82,10 @@ export class GetDataService {
     return this.http.post<responseStatus>(this.url, { "email":email, "companyId":id, "quantity":quantity} );               
   }
 
-  sellShare(email,id,quantity,data)
+  sellShare(email,id,quantity)
   {
-    console.log(data);
     this.url = this.baseUrl + "sell";
-    return this.http.post<responseStatus>(this.url, { "email":email, "companyId":id, "quantity":quantity ,"current_rate":data} );               
+    return this.http.post<responseStatus>(this.url, { "email":email, "companyId":id, "quantity":quantity } );               
   }
 
   addCompany(companyModel: CompanyModel): Observable<any> {
@@ -105,11 +104,12 @@ export class GetDataService {
 
   }
 
-  dostuff(data,price):number{
-    console.log(data);
-    console.log(price);
-   return Math.floor(Math.random() * price);
-  }
+  // getRandomNum(max_price,min_price):number{
+  //   console.log(max_price);
+  //   console.log(min_price);
+  //  return Math.floor(Math.random() * max_price + min_price);
+  // }
+  
   getCompanyById(company_id:number) : Observable<CompanyModel>{
     this.url=this.baseUrl+"getCompanyById?id="+company_id;
     return this.http.get<CompanyModel>(this.url);

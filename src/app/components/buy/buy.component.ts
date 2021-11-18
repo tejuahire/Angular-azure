@@ -14,9 +14,11 @@ export class BuyComponent implements OnInit {
   companyId = '';
   quantity:number=0 ;
   companyDetails;
-  data:number=Math.floor(Math.random() * 20);
+  current_rate:number;
+  // data:number=Math.floor(Math.random() * 10);
+  // max_price:number;
+  // min_price:number;
   amount:number;
-  price:number;
   constructor(private router: Router, 
               private getDataservice: GetDataService, 
               private _Activatedroute:ActivatedRoute,
@@ -24,12 +26,11 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
 
-    const obs$=interval(1000);
-    obs$.subscribe((d)=>{
-        this.data=this.getDataservice.dostuff(this.data,this.price);
-        this.getAmount(this.data,this.quantity);
-        console.log(this.data);
-    });
+    // const obs$=interval(2000);
+    // obs$.subscribe((d)=>{
+    //     this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
+    //     this.getAmount(this.data,this.quantity);
+    // });
 
 
     this._Activatedroute.paramMap.subscribe(params => { 
@@ -40,7 +41,7 @@ export class BuyComponent implements OnInit {
       .subscribe(
         data => {
             this.companyDetails = data;
-            this.price=this.companyDetails.current_rate;
+            this.current_rate=this.companyDetails.current_rate;
         },
         error => {
             console.log(error)
@@ -75,11 +76,11 @@ export class BuyComponent implements OnInit {
   }
 
   getQuantity(quantity:number){
-    this.quantity=quantity;
+    this.amount = this.current_rate * quantity;
   }
 
   getAmount(data:number,quantity:number){
-    this.amount = data * quantity;
+    
   }
  cancel(){
     this.router.navigate(['my-shares']);

@@ -104,7 +104,7 @@
         
         <div *ngIf="companyDetails" class=" d-flex justify-content-center">
             <div class="about">
-                <div class="sell-heading sell-heading1">Current Rate :</div><div class="sell-value"> {{ data }}</div><br><!--companyDetails.current_rate-->
+                <div class="sell-heading sell-heading1">Current Rate :</div><div class="sell-value"> {{ companyDetails.current_rate }}</div><br>
                 <div class="sell-heading">Available Quantity :</div><div class="sell-value"> {{companyDetails.quantity}}</div> 
             </div>
         </div>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="col-sm-4">                        
                         <input type="text" required class="form-control" name="quantity" 
-                [(ngModel)]=quantity #qty="ngModel" minlength="3" placeholder="Enter Quantity">
+                [(ngModel)]=quantity #qty="ngModel" minlength="3" placeholder="Enter Quantity" (input)="getQuantity($event.target.value)">
                     </div>
                     <div class="col-sm-1">
                         
