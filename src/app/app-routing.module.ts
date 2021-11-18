@@ -23,6 +23,7 @@ import { GetallClientsComponent } from './components/getall-clients/getall-clien
 import { GethistoryComponent } from './components/gethistory/gethistory.component';
 
 
+
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
@@ -44,6 +45,7 @@ export const AppRoutes: Routes = [
   { path: 'updatecompany/:company_id',component: UpdateCompanyComponent },
   { path: 'getallclient',component:GetallClientsComponent },
   { path: 'gethistory/:email',component:GethistoryComponent},
+ 
   { path: 'history', component: HistoryComponent },
 ];
 

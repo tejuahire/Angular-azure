@@ -46,7 +46,12 @@ export class LoginComponent {
         }
         if (this.mailid == "abc@atyeti.com") {
             if (this.password == 'abc@123') {
-                this.router.navigate(['/admin']);
+               
+               
+                    this.router.navigate(['/admin']);
+                
+               
+               
             }
             else {
                 console.log("invalid password");

@@ -27,4 +27,9 @@ export class GetallClientsComponent implements OnInit {
   {
     this.router.navigate(['gethistory',email]);
   }
+
+  goToAdmin()
+  {
+    this.router.navigate(['admin']);
+  }
 }

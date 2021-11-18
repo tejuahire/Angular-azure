@@ -1,10 +1,12 @@
 <body>
     <div class="container">
     <br><br>
+    
         <div *ngIf="company" class="table-responsive-md " id="">
            
             <button type="submit"  class="btn btn-primary buy-btn" (click)="goToAddcompany()" >Add Stock  </button>&nbsp;&nbsp;
             <button type="submit" class="btn btn-info" (click)="gotoAllClient()" >Get-All-Clients</button>
+            <button type="submit"  class="btn btn-danger" (click)="goToHome()" style="margin-left:780px;">Log-out</button>
               <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
                 <thead>
                     <tr>
