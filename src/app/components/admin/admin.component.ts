@@ -43,5 +43,9 @@ export class AdminComponent implements OnInit {
   {
     this.router.navigate(['/getallclient']);
   }
+  goToHome()
+  {
+    this.router.navigate(['/home'])
+  }
 
 }

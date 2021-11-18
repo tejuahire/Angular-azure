@@ -29,5 +29,9 @@ email;
     this.history = this.getDataservice.getHistory(email);
   }
 
+  goToclients()
+  {
+    this.router.navigate(['getallclient'])
+  }
 
 }
