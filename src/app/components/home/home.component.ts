@@ -15,56 +15,24 @@ import { filter } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
 
   companyes: Observable<Company[]>;
-  // companyes :any=[];
   name:any;
-  data:number=Math.floor(Math.random() * 20);
-  price:number;
+  num:number;
+ 
 
-@Input()
+@Input()git
   companyDetails;
   private _Activatedroute: any;
   companyId: any;
+  
   constructor(private router: Router, 
               private getDataservice: GetDataService, 
               private toastr: ToastrService,
-              private loginService:AuthenticationService) { const obs$=interval(1000);
-                obs$.subscribe((d)=>{
-                    this.data=this.getDataservice.dostuff(this.data,20);
-                    console.log(this.data);
-                });
-            }
+              private loginService:AuthenticationService) {}
               watchList;
   ngOnInit() {
-
     
     this.loadData();
     this.reloadData();
-
-    this._Activatedroute.paramMap.subscribe(params => { 
-      this.companyId = params.get('id'); 
-      });
-
-      this.getDataservice.getOneCompany(this.companyId)
-      .subscribe(
-        data => {
-            this.companyDetails = data;
-            this.price=this.companyDetails.current_rate;
-        },
-        error => {
-            console.log(error)
-        }
-      )
-    
-    // this.getDataservice.getAllCompany()
-    // .subscribe(
-    //   data => {
-    //       this.companyDetails = data;
-    //   },
-    //   error => {
-    //       console.log(error)
-    //   }
-    // )
-   
   }
 
 
@@ -79,7 +47,6 @@ export class HomeComponent implements OnInit {
       data => {
         if(data.length)
           this.watchList = data;
-          
       },
       error => {
           console.log(error)

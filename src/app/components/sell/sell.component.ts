@@ -13,17 +13,18 @@ export class SellComponent implements OnInit {
   quantity:number=0 ;
   companyDetails;
   companyId;
-  price:number;
+  max_price:number;
+  min_price:number;
   amount:number;
-  data:number=Math.floor(Math.random() * 20);
+  data:number=Math.floor(Math.random() * 10);
   constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) { }
 
 
   ngOnInit() {
     
-    const obs$=interval(1000);
+    const obs$=interval(2000);
     obs$.subscribe((d)=>{
-        this.data=this.getDataservice.dostuff(this.data,this.price);
+        this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
         this.getAmount(this.data,this.quantity);
       });
 
@@ -40,7 +41,8 @@ export class SellComponent implements OnInit {
               if(data[i].company_id==this.companyId)
               {
                 this.companyDetails = data[i];
-                this.price=this.companyDetails.current_rate;
+                this.max_price=this.companyDetails.year_high;
+                this.min_price=this.companyDetails.year_low;
               }
             }
             
