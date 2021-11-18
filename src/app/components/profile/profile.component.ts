@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetDataService } from '../../services/get-data.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
@@ -39,10 +39,6 @@ amount;
     this.withdraw();}
   }
 
-<<<<<<< HEAD
-  
-
-=======
   addfund() 
   {
     this.getDataservice.addfund( localStorage.getItem('username'), this.amount)
@@ -77,5 +73,4 @@ amount;
         }
       )
   }
->>>>>>> ec401cbd04f030be447c03c9f303237ac8efe8fc
 }
