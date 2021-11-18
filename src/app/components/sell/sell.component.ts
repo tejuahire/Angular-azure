@@ -13,9 +13,10 @@ export class SellComponent implements OnInit {
   quantity:number=0 ;
   companyDetails;
   companyId;
-  price:number;
+  max_price:number;
+  min_price:number;
   amount:number;
-  data:number=Math.floor(Math.random() * 20);
+  data:number;
   constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) { }
 
 
@@ -23,7 +24,9 @@ export class SellComponent implements OnInit {
     
     const obs$=interval(1000);
     obs$.subscribe((d)=>{
-        this.data=this.getDataservice.dostuff(this.data,this.price);
+        console.log(this.max_price);
+        console.log(this.min_price);
+        this.data=this.getDataservice.dostuff(this.max_price,this.min_price);
         this.getAmount(this.data,this.quantity);
       });
 
@@ -40,7 +43,8 @@ export class SellComponent implements OnInit {
               if(data[i].company_id==this.companyId)
               {
                 this.companyDetails = data[i];
-                this.price=this.companyDetails.current_rate;
+                this.max_price=this.companyDetails.year_high;
+                this.min_price=this.companyDetails.year_low;
               }
             }
             

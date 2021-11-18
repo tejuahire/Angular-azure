@@ -15,6 +15,8 @@ export class BuyComponent implements OnInit {
   quantity:number=0 ;
   companyDetails;
   data:number=Math.floor(Math.random() * 20);
+  max_price:number;
+  min_price:number;
   amount:number;
   price:number;
   constructor(private router: Router, 
@@ -26,7 +28,7 @@ export class BuyComponent implements OnInit {
 
     const obs$=interval(1000);
     obs$.subscribe((d)=>{
-        this.data=this.getDataservice.dostuff(this.data,this.price);
+        this.data=this.getDataservice.dostuff(this.max_price,this.min_price);
         this.getAmount(this.data,this.quantity);
         console.log(this.data);
     });
@@ -40,7 +42,8 @@ export class BuyComponent implements OnInit {
       .subscribe(
         data => {
             this.companyDetails = data;
-            this.price=this.companyDetails.current_rate;
+            this.max_price=this.companyDetails.year_high;
+            this.min_price=this.companyDetails.year_low;
         },
         error => {
             console.log(error)
@@ -50,7 +53,7 @@ export class BuyComponent implements OnInit {
 
   buyItem() 
   {
-    this.getDataservice.buyShare( localStorage.getItem('username'), this.companyId, this.quantity)
+    this.getDataservice.buyShare( localStorage.getItem('username'), this.companyId, this.quantity, this.data)
       .subscribe(
         data => {console.log(data)
           if(data.status=="success"){
