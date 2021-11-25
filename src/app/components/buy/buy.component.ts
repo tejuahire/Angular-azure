@@ -79,9 +79,6 @@ export class BuyComponent implements OnInit {
     this.amount = this.current_rate * quantity;
   }
 
-  getAmount(data:number,quantity:number){
-    
-  }
  cancel(){
     this.router.navigate(['my-shares']);
   }
