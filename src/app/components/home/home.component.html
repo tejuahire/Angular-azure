@@ -46,14 +46,24 @@
   <!-- Home page -->
   
   <div class="container">
-      <div *ngIf="!loginService.isUserLoggedIn()">
-          <section>
-              <img class="mySlides"
-                  src="https://d3e44x6tjqv3e6.cloudfront.net/sites/default/files/2021-02/Top%205%20mobile%20trading%20apps%20available%20in%20India.jpg"
-                  style="width:100%; padding: 0px;border-radius: 8px;height: 450px;">
-          </section>
-          <br>
+    <div class="row">
+      <div class="col">
+        <div *ngIf="!loginService.isUserLoggedIn()">
+              <section>
+                  <img class="mySlides"
+                      src="https://d3e44x6tjqv3e6.cloudfront.net/sites/default/files/2021-02/Top%205%20mobile%20trading%20apps%20available%20in%20India.jpg"
+                      style="padding: 0px;border-radius: 8px;height: 450px;margin-top: 5%;">
+              </section>
+              <br>
+        </div>
+      </div>
+           <div class="col">
+                <app-login></app-login>
+            </div>
+    </div>
+  </div>
   <!-- dummy data -->
+<div class="container">
   <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
         <div class="header-body">

@@ -42,9 +42,8 @@
 }
 
 .containerLogin {
-  margin-top: 15%;
-  margin-left: 15%;
-  width: 100%;
+  margin-top: 12%;
+  width: 90%;
   height: 100%;
   box-shadow: 10px 10px 10px 10px rgb(214, 197, 197);
 }
