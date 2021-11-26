@@ -1,4 +1,4 @@
-<!-- <div class="background" *ngIf="showImage"> -->
+<div class="background" *ngIf="showImage">
   <!-- <div class="sideimage">
     <div class="card"></div>
     <img
@@ -11,11 +11,11 @@
   <div class="containerside">
     <div *ngIf="switchToLoginPage" class="login bgimg">
       <form (ngSubmit)="checkLogin(mail, pass)">
-        <div class="card align-items-center container containerLogin">
+        <div class="card container containerLogin">
           <div class="formElements">
             <div class="mailId">
               <span class="formicon"
-                ><img src="assets/images/login.png" width="70" height="70" 
+                ><img src="assets/images/login.png" width="70" height="70" style="margin-left: 50px;"
               /></span>
               <span class="formtagline">
                 <h3 style="text-align: center">USER LOGIN</h3>
@@ -95,7 +95,7 @@
               class="btn btn-primary"
               height="300px"
               width="300px"
-              style="margin-right: 30px"
+              style="margin-left: 30px"
             >
               Login
             </button>
@@ -106,19 +106,20 @@
               class="btn btn-primary"
               height="100px"
               width="100px"
+              style="margin-left: 60px"
             >
               New User?
             </button>
           </div>
 
-          <a routerLink="/forgotpassword" class="registerButton"
+          <a routerLink="/forgotpassword" class="registerButton" style="text-align: center;"
             >Forget Password?</a
           >
         </div>
       </form>
     </div>
   </div>
-<!-- </div> -->
+</div>
 <div id="sect1">
   <div *ngIf="!switchToLoginPage" class="register bgimg">
     <br /><br />
@@ -226,8 +227,8 @@
           <a (click)="switchToLogin()" class="loginButton">Login</a>
         </p>
       </div>
-      <p style="margin-top: 50px;">
-        <app-footer></app-footer></p>
+      <!-- <p style="margin-top: 50px;">
+        <app-footer></app-footer></p> -->
     </form>
   </div>
 </div>
