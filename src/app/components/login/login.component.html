@@ -1,21 +1,21 @@
 <div class="background" *ngIf="showImage">
-  <div class="sideimage">
+  <!-- <div class="sideimage">
     <div class="card"></div>
     <img
       class="card-img-bottom"
       src="https://img.lovepik.com/free-template/bg/20200904/bg/58b877288b0bf_410641.png_list.jpg"
       alt="Card image cap"
     />
-  </div>
+  </div> -->
 
   <div class="containerside">
     <div *ngIf="switchToLoginPage" class="login bgimg">
       <form (ngSubmit)="checkLogin(mail, pass)">
-        <div class="card align-items-center container containerLogin">
+        <div class="card container containerLogin">
           <div class="formElements">
             <div class="mailId">
               <span class="formicon"
-                ><img src="assets/images/login.png" width="70" height="70" 
+                ><img src="assets/images/login.png" width="70" height="70" style="margin-left: 50px;"
               /></span>
               <span class="formtagline">
                 <h3 style="text-align: center">USER LOGIN</h3>
@@ -95,7 +95,7 @@
               class="btn btn-primary"
               height="300px"
               width="300px"
-              style="margin-right: 30px"
+              style="margin-left: 30px"
             >
               Login
             </button>
@@ -106,12 +106,13 @@
               class="btn btn-primary"
               height="100px"
               width="100px"
+              style="margin-left: 60px"
             >
               New User?
             </button>
           </div>
 
-          <a routerLink="/forgotpassword" class="registerButton"
+          <a routerLink="/forgotpassword" class="registerButton" style="text-align: center;"
             >Forget Password?</a
           >
         </div>
@@ -130,8 +131,8 @@
             {{ errorMessage }}
           </div>
           <br />
-          <br />
-          <div class="mailId">
+         
+          <div class="mailId" style="margin-top: 10px;">
             <label>Mail ID</label>
             <input
               type="email"
@@ -149,8 +150,8 @@
             </div>
           </div>
 
-          <div class="username">
-            <br /><label>UserName</label>
+          <div class="username" style="margin-top: 10px;">
+          <label>UserName</label>
             <input
               type="text"
               required
@@ -169,8 +170,8 @@
             </div>
           </div>
 
-          <div class="adhar">
-            <br /><label>Phone Number</label>
+          <div class="adhar" style="margin-top: 10px;">
+          <label>Phone Number</label>
             <input
               type="text"
               required
@@ -194,8 +195,8 @@
             </div>
           </div>
 
-          <div class="password">
-            <br /><label>Password</label>
+          <div class="password" style="margin-top: 10px;">
+           <label>Password</label>
             <input
               type="password"
               required
@@ -226,8 +227,8 @@
           <a (click)="switchToLogin()" class="loginButton">Login</a>
         </p>
       </div>
-      <p style="margin-top: 50px;">
-        <app-footer></app-footer></p>
+      <!-- <p style="margin-top: 50px;">
+        <app-footer></app-footer></p> -->
     </form>
   </div>
 </div>

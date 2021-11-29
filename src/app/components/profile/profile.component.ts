@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../../services/get-data.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
@@ -12,7 +12,7 @@ switchToPage=true;
 switchTowithdraw=true;
 amount;
 
-  constructor(private router: Router, 
+  constructor( 
     private getDataservice: GetDataService, 
     private _Activatedroute:ActivatedRoute,
     private toastr: ToastrService) { }
