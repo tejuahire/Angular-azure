@@ -1,5 +1,9 @@
 .navbar{
-    background-color:black ;
+    background-color:black !important;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
 }
 
 .navbarHead{
@@ -52,3 +56,5 @@
    .logout{
     margin-left: 500%; 
    }
+
+   
