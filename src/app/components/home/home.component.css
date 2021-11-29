@@ -82,20 +82,7 @@ fa-icon
      margin: 0%;
  }
  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
-/**{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins'sans-serif;
-}
-body{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background: #f3f3f3;
-	overflow: hidden;
-}*/
+
 .isomerticcard{
 	margin-left: 40px;
 	margin-top: 40px;
@@ -181,16 +168,6 @@ body{
   color: #777;
   text-align: center;
 }
-/*.container .card .content:before
-{
-	content: '';
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100px;
-	height: 400px;
-	background:linear-gradient(transparent,rgba(0,0,0,.1));
-}*/
 
 .parallax {
     margin-top: 40px;
