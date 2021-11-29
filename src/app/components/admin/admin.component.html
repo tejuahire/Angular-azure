@@ -1,13 +1,15 @@
 <body>
     <div class="container">
-    <br><br>
-    
+        <br><br>
+
         <div *ngIf="company" class="table-responsive-md " id="">
-           
-            <button type="submit"  class="btn btn-primary buy-btn" (click)="goToAddcompany()" >Add Stock  </button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-info" (click)="gotoAllClient()" >Get-All-Clients</button>
-            <button type="submit"  class="btn btn-danger" (click)="goToHome()" style="margin-left:780px;">Log-out</button>
-              <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
+
+            <button type="submit" class="btn btn-primary buy-btn" (click)="goToAddcompany()">Add Stock
+            </button>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-info" (click)="gotoAllClient()">Get-All-Clients</button>
+            <button type="submit" class="btn btn-danger" (click)="goToHome()"
+                style="margin-left:780px;">Log-out</button>
+            <table class="table table-borderles table-hover" id="excel-table" style="margin-top: 10px;">
                 <thead>
                     <tr>
                         <th>Company Name</th>
@@ -24,13 +26,13 @@
                         <th>Current Price</th>
                         <th>Action</th>
                         <th></th>
-                       
+
                     </tr>
                 </thead>
-    
+
                 <tbody>
-                    <tr *ngFor="let elements of company | async " >
-                        
+                    <tr *ngFor="let elements of company | async ">
+
                         <td>{{elements.name}}</td>
                         <td>{{elements.company_id}}</td>
                         <td>{{elements.open_rate}}</td>
@@ -43,23 +45,22 @@
                         <td>{{elements.market_cap}}</td>
                         <td>{{elements.volume}}</td>
                         <td>{{elements.current_rate}}</td>
-                        <td><button type="submit" class="btn btn-outline-danger"  (click)="deleteCompany(elements.company_id)" >Delete </button></td>
-                        <td><button type="submit" class="btn btn-outline-success"  (click)="updateCompany(elements.company_id)" >Update </button></td>
-    
+                        <td><button type="submit" class="btn btn-outline-danger"
+                                (click)="deleteCompany(elements.company_id)">Delete </button></td>
+                        <td><button type="submit" class="btn btn-outline-success"
+                                (click)="updateCompany(elements.company_id)">Update </button></td>
+
                     </tr>
-    
+
                 </tbody>
             </table>
         </div>
-    
-       
-        
-    
+
+
+
+
         <p *ngIf="!company" class="noData">
-            Nothing available 
+            Nothing available
         </p>
     </div>
-  </body>  
-    
-    
-    
+</body>
