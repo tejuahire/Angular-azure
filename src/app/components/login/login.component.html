@@ -18,7 +18,7 @@
                 ><img src="assets/images/login.png" width="70" height="70" style="margin-left: 50px;"
               /></span>
               <span class="formtagline">
-                <h3 style="text-align: center">USER LOGIN</h3>
+                <h5 style="text-align: center">USER LOGIN</h5>
               </span>
               <br />
               <div *ngIf="invalidLogin" class="text-danger">
@@ -69,7 +69,6 @@
             </div>
           </div>
 
-          <br />
           <div class="btn-wrapper text-center">
             <a href="https://github.com/login" class="btn btn-neutral btn-icon">
               <img
@@ -122,7 +121,6 @@
 </div>
 <div id="sect1">
   <div *ngIf="!switchToLoginPage" class="register bgimg">
-    <br /><br />
 
     <form (ngSubmit)="registerNewUser()">
       <div class="card align-items-center container containerRegister">
@@ -132,7 +130,7 @@
           </div>
           <br />
          
-          <div class="mailId" style="margin-top: 10px;">
+          <div class="mailId" style="margin-top: 1px;">
             <label>Mail ID</label>
             <input
               type="email"
@@ -150,7 +148,7 @@
             </div>
           </div>
 
-          <div class="username" style="margin-top: 10px;">
+          <div class="username" style="margin-top: 5px;">
           <label>UserName</label>
             <input
               type="text"
@@ -170,7 +168,7 @@
             </div>
           </div>
 
-          <div class="adhar" style="margin-top: 10px;">
+          <div class="adhar" style="margin-top: 5px;">
           <label>Phone Number</label>
             <input
               type="text"
@@ -195,7 +193,7 @@
             </div>
           </div>
 
-          <div class="password" style="margin-top: 10px;">
+          <div class="password" style="margin-top: px;">
            <label>Password</label>
             <input
               type="password"
