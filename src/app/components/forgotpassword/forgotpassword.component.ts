@@ -42,7 +42,7 @@ export class ForgotpasswordComponent implements OnInit {
                         {   
                             this.invalidLogin = false;
                             this.toastr.info('Successully updated');
-                            this.router.navigate(['login'])
+                            this.router.navigate(['home'])
                         }
                         else
                         {
