@@ -22,16 +22,16 @@ export class ForgotpasswordComponent implements OnInit {
   
   }
 
-  checkValidLogin(user,mail)
+  checkValidLogin(user,mail,pass)
   {
-      if(mail.errors || user.errors)
+      if(mail.errors || user.errors || pass.errors)
           return true;
       else
           return false;
   }
-  checkLogin(user,mail) 
+  checkLogin(user,mail, pass) 
     {
-        if(mail.errors || user.errors){
+        if(mail.errors || user.errors || pass.rrors){
             return;
         }
         
@@ -42,7 +42,7 @@ export class ForgotpasswordComponent implements OnInit {
                         {   
                             this.invalidLogin = false;
                             this.toastr.info('Successully updated');
-                            this.router.navigate(['login'])
+                            this.router.navigate(['home'])
                         }
                         else
                         {
