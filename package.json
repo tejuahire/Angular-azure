@@ -29,6 +29,7 @@
     "@progress/kendo-drawing": "^1.6.0",
     "@progress/kendo-theme-default": "^4.14.0",
     "angular-chart.js": "^1.1.1",
+    "angularx-social-login": "^3.5.7",
     "bootstrap": "^4.4.1",
     "canvasjs": "^1.8.3",
     "crypto-js": "^4.1.1",

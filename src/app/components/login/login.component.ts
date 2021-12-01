@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authenticate.service';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 
 @Component({
     selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent {
     showImage = true;
 
 
-    constructor(private router: Router, private loginservice: AuthenticationService) { }
+    constructor(private router: Router, private loginservice: AuthenticationService,
+        private authService: SocialAuthService) { }
 
     checkValidLogin(mail, pass) {
         if (mail.errors || pass.errors)
@@ -46,12 +48,12 @@ export class LoginComponent {
         }
         if (this.mailid == "abc@atyeti.com") {
             if (this.password == 'abc@123') {
-               
-               
-                    this.router.navigate(['/admin']);
-                
-               
-               
+
+
+                this.router.navigate(['/admin']);
+
+
+
             }
             else {
                 console.log("invalid password");
@@ -112,6 +114,30 @@ export class LoginComponent {
     switchToLogin() {
         this.switchToLoginPage = true;
         this.showImage = true;
+    }
+
+    signInHandler(): void {
+        this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
+            localStorage.setItem('google_auth', JSON.stringify(data));
+
+            this.loginservice.addNewUser(data.email, data.firstName, this.phone, this.password)
+                .subscribe(
+                    data => {
+                        this.switchToLoginPage = true;
+                        this.password = '';
+                        this.invalidUser = false;
+                        this.invalidLogin = false;
+                        // this.switchToLogin();
+
+                    }
+
+                );
+            localStorage.setItem('username', data.email);
+            this.invalidLogin = false;
+
+            this.router.navigate([''])
+            //   this.router.navigateByUrl('/dashboard').then();
+        });
     }
 
 }
