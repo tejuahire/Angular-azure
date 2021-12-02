@@ -1,17 +1,13 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <div class="wallet" style="background-color: rgb(67, 65, 68); text-align: center; margin-top: 80px;border-radius: 20px; padding: 20px;">
-            <h5 style="color:rgb(247, 247, 252);">Wallet</h5>
-          </div>
+      <br><br>
         <br><div class="container emp-profile" style="background-color:#827D7D;border-radius: 20px;">
             <form method="post">
                 <div *ngIf="userDetails" class="row">
                     
                     <div class="col-md-4">
-                        <div *ngIf="userDetails[0].name==='Ram Sankar R'"class="profile-img">
-                            <img src="assets/images/ram.jpg" alt=""/>                    
-                        </div>
+                
                         <div *ngIf="userDetails[0].name!='Ram Sankar R'"class="user-img">
                             <img src="assets/images/user.png" alt=""/>                    
                         </div>
@@ -76,7 +72,7 @@
                                         </div>
                                       <div class="container">
                                         <div *ngIf=switchToPage>                         
-                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width: 120px;" name="amount"  minlength="5" maxlength="5" [(ngModel)]=amount placeholder="Enter Amount">  
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" style="width: 120px;" name="amount"  minlength="5" maxlength="5" [(ngModel)]=amount placeholder="Enter Amount">  
                                         </div>
                                         </div>
                                         <br>
@@ -89,64 +85,9 @@
                                             </div>
 
                                         </div> <br>
-                                        <!--<button type="button">ADD FUND</button>
-                                <button type="button">WITHDRAW</button><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-                                <!--<br><p class = "borderexample"><INPUT TYPE="Radio" Name="payment" Value="CC" onclick="location.href='https://paytm.com/';">UPI &nbsp;&nbsp;&nbsp;
-                                    <INPUT TYPE="Radio" Name="payment" Value="DC" onclick="location.href='https://pay.google.com/intl/en_in/about/?gclid=Cj0KCQiAys2MBhDOARIsAFf1D1frP2nRXROknOQhhAQ9xMmiWxMINWHCbEiNDEtDCUL4y54oAoOgB2saAqvVEALw_wcB&gclsrc=aw.ds';">GooglePay &nbsp;&nbsp;&nbsp;
-                                    <INPUT TYPE="Radio" Name="payment" Value="PP" Checked>Debit Card &nbsp;&nbsp;&nbsp;
-                                    <INPUT TYPE="Radio" Name="payment" Value="PP" onclick="location.href='https://paytm.com/';" Checked>PayTM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <p align="right">
-                                              <button style="border-radius: 20px; width: 100px;" type="button" class="btn btn-dark sell" onclick="location.href='https://paytm.com/';">Proceed</button> </p>-->
+                                
                                        
                             </div>
-                            <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>

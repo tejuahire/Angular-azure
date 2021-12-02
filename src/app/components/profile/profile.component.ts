@@ -48,7 +48,7 @@ amount;
       window.location.reload();
      }        
           else
-            this.toastr.error("",'error',{positionClass:"toast-bottom-center"});
+            this.toastr.error(" ",'error',{positionClass:"toast-bottom-center"});
         },
         error => {
             console.log(error)
