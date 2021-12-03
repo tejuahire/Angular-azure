@@ -49,7 +49,7 @@ export class LoginComponent {
         }
         if (this.mailid == "abc@atyeti.com") {
             if (this.password == 'abc@123') {
-
+                localStorage.setItem('username', this.mailid);
 
                 this.router.navigate(['/admin']);
 

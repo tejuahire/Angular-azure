@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CompanyModel } from 'src/app/company-model';
+import { AuthenticationService } from 'src/app/services/authenticate.service';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -11,7 +12,9 @@ import { GetDataService } from 'src/app/services/get-data.service';
 export class AddStocksComponent implements OnInit {
 
   company: CompanyModel = new CompanyModel();
-  constructor(private getDataService: GetDataService, private route: Router) { }
+  constructor(private getDataService: GetDataService,
+    private loginService:AuthenticationService,
+    private route: Router) { }
 
   ngOnInit() {
   }
@@ -46,5 +49,16 @@ export class AddStocksComponent implements OnInit {
   gotoBack()
   {
     this.route.navigate(['admin']);
+  }
+
+  isLogedIn(){
+    if(this.loginService.isUserLoggedIn()){
+     return true;
+    }else{
+
+      alert("Please login");
+      this.route.navigate(['home']);
+      return false;
+    }
   }
 }

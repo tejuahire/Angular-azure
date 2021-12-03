@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CompanyModel } from 'src/app/company-model';
+import { AuthenticationService } from 'src/app/services/authenticate.service';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -12,7 +13,9 @@ import { GetDataService } from 'src/app/services/get-data.service';
 export class AdminComponent implements OnInit {
 
   company: Observable<CompanyModel[]>;
-  constructor(private getDataservice: GetDataService, private router: Router) { }
+  constructor(private getDataservice: GetDataService,
+    private loginService:AuthenticationService,
+    private router: Router) { }
 
   ngOnInit() {
     this.loadData()
@@ -45,7 +48,19 @@ export class AdminComponent implements OnInit {
   }
   goToHome()
   {
+    this.loginService.logOut();
     this.router.navigate(['/home'])
+  }
+
+  isLogedIn(){
+    if(this.loginService.isUserLoggedIn()){
+     return true;
+    }else{
+
+      alert("Please login");
+      this.router.navigate(['home']);
+      return false;
+    }
   }
 
 }

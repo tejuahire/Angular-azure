@@ -1,7 +1,7 @@
 <body>
     <div class="container">
         <br><br>
-
+        <div class="afterlogin" *ngIf="isLogedIn()" >
         <div *ngIf="company" class="table-responsive-md " id="">
 
             <button type="submit" class="btn btn-primary buy-btn" (click)="goToAddcompany()">Add Stock
@@ -62,5 +62,6 @@
         <p *ngIf="!company" class="noData">
             Nothing available
         </p>
+    </div>
     </div>
 </body>

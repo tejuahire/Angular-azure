@@ -1,5 +1,6 @@
 <body>
-    <div class="col-md-6 offset-md-3">
+    <div class="afterlogin" *ngIf="isLogedIn()" >
+            <div class="col-md-6 offset-md-3">
         <br><br>
         <form action="" (ngSubmit)="onSubmit()">
 
@@ -135,5 +136,6 @@
             </div>
         </form>
 
+    </div>
     </div>
 </body>
