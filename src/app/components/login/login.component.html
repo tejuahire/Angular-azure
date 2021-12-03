@@ -16,7 +16,7 @@
               </div>
               <label>User Name</label>
               <input type="email" required class="form-control" name="mailid" [(ngModel)]="mailid" #mail="ngModel"
-                minlength="3" email />
+                minlength="3" email  email placeholder="UserName..."/>
 
               <div *ngIf="mail.invalid; else elseBlock" class="text-danger warningMessage">
                 <div *ngIf="mail.errors.minlength">
@@ -31,7 +31,7 @@
             <div class="password">
               <br /><label>Password</label>
               <input type="password" class="form-control" name="password" [(ngModel)]="password" #pass="ngModel"
-                required minlength="3" />
+                required minlength="3" placeholder="Password..." />
 
               <div *ngIf="pass.invalid" class="text-danger warningMessage">
                 <div *ngIf="pass.errors.minlength">
