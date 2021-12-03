@@ -86,6 +86,9 @@
   background: rgba(0, 0, 0, 0.7);
   color: white;
 }
+.containerforget{
+  margin-top: -420px;
+}
 .loginButton {
   color: #0fbcf9 !important;
   cursor: pointer;
