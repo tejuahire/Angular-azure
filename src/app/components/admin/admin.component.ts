@@ -56,7 +56,6 @@ export class AdminComponent implements OnInit {
     if(this.loginService.isUserLoggedIn()){
      return true;
     }else{
-
       alert("Please login");
       this.router.navigate(['home']);
       return false;

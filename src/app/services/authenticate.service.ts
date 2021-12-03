@@ -30,15 +30,7 @@ export class AuthenticationService
     isUserLoggedIn() {
       let user = null;
       user =  localStorage.getItem('username');
-      if( !(user === null)){
-        const users = user.split(".");
-        console.log(users[1]);
-        if(users[1]=='com'){
-          return true;
-        }
-      }else{
-        return false;
-      }
+      return  !(user === null);       
       }
 
     
