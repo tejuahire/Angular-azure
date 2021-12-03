@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
     username = '';
     password = '';
@@ -24,6 +24,9 @@ export class LoginComponent {
 
     constructor(private router: Router, private loginservice: AuthenticationService,
         private authService: SocialAuthService, private toastr: ToastrService) { }
+    ngOnInit(): void {
+       this.loginservice.logOut();
+    }
 
     checkValidLogin(mail, pass) {
         if (mail.errors || pass.errors)

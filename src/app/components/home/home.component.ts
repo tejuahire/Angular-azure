@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
     //     this.data=this.getDataservice.getRandomNum(this.max_price,this.min_price);
     //     // this.getAmount(this.data,this.quantity);
     //   });
+  
     this.loadData();
     this.reloadData();
   }
