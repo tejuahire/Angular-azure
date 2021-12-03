@@ -20,10 +20,10 @@ export class LoginComponent {
     switchToLoginPage = true;
     errorMessage = '';
     showImage = true;
-    switchToForgetpass=false;
-   
+    switchToForgetpass = false;
+
     constructor(private router: Router, private loginservice: AuthenticationService,
-        private authService: SocialAuthService,private toastr: ToastrService) { }
+        private authService: SocialAuthService, private toastr: ToastrService) { }
 
     checkValidLogin(mail, pass) {
         if (mail.errors || pass.errors)
@@ -110,19 +110,19 @@ export class LoginComponent {
     switchToRegister() {
         this.switchToLoginPage = false;
         this.showImage = false;
-        this.switchToForgetpass=false;
+        this.switchToForgetpass = false;
     }
 
     switchToLogin() {
         this.switchToLoginPage = true;
         this.showImage = true;
-        this.switchToForgetpass=false;
+        this.switchToForgetpass = false;
     }
-    switchToForget(){
-        this.switchToForgetpass=true;
+    switchToForget() {
+        this.switchToForgetpass = true;
         this.switchToLoginPage = false;
         this.showImage = false;
-        
+
     }
 
     signInHandler(): void {
@@ -148,41 +148,38 @@ export class LoginComponent {
             //   this.router.navigateByUrl('/dashboard').then();
         });
     }
-    checkValidLoginone(user,mail,pass)
-  {
-      if(mail.errors || user.errors || pass.errors)
-          return true;
-      else
-          return false;
-  }
-  checkLoginone(user,mail, pass) 
-    {
-        if(mail.errors || user.errors || pass.rrors){
+    checkValidLoginone(user, mail, pass) {
+        if (mail.errors || user.errors || pass.errors)
+            return true;
+        else
+            return false;
+    }
+    checkLoginone(user, mail, pass) {
+        if (mail.errors || user.errors || pass.rrors) {
             return;
         }
-        
-        this.loginservice.forgot(this.username,this.mailid,this.password) 
-        .subscribe( 
-            data  => { console.log(data)
-                        if(data.status==='success')
-                        {   
-                            this.invalidLogin = false;
-                            this.toastr.info('Successully updated');
-                            this.router.navigate(['home'])
-                            
-                        }
-                        else
-                        {
-                            this.errorMessage = "Invalid Credentials";
-                            this.invalidLogin = true
-                        }
-                    },
-            error => { 
-                        if(error.error.message==="Incorrect credentials" || error.error.message==="User doesn't exist")
-                            this.errorMessage = error.error.message;
+
+        this.loginservice.forgot(this.username, this.mailid, this.password)
+            .subscribe(
+                data => {
+                    console.log(data)
+                    if (data.status === 'success') {
+                        this.invalidLogin = false;
+                        this.toastr.info('Successully updated');
+                        this.router.navigate(['home'])
+
+                    }
+                    else {
+                        this.errorMessage = "Invalid Credentials";
                         this.invalidLogin = true
                     }
-            );     
+                },
+                error => {
+                    if (error.error.message === "Incorrect credentials" || error.error.message === "User doesn't exist")
+                        this.errorMessage = error.error.message;
+                    this.invalidLogin = true
+                }
+            );
     }
 
 }
