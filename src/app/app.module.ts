@@ -35,6 +35,7 @@ import { GetallClientsComponent } from './components/getall-clients/getall-clien
 import { GethistoryComponent } from './components/gethistory/gethistory.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,8 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     GethistoryComponent,
 
     ContactusComponent,
+
+    AdminnavbarComponent,
 
 
   ],
