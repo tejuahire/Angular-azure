@@ -10,22 +10,34 @@ import { AuthenticationService } from 'src/app/services/authenticate.service';
 })
 export class AdminnavbarComponent implements OnInit {
 
-  constructor(private loginService:AuthenticationService,
-    private router:Router) { }
+  constructor(private loginService: AuthenticationService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
-  isLogedIn(){
-    if(this.loginService.isUserLoggedIn()){
-     let user =  localStorage.getItem('username');
-     if(user === "abc@atyeti.com"){
-       return false;
-     }else{
-      return true;
-     }
-     
+  isLogedIn() {
+    if (this.loginService.isUserLoggedIn()) {
+      let user = localStorage.getItem('username');
+      if (user === "abc@atyeti.com") {
+        return false;
+      } else {
+        return true;
+      }
+
     }
+  }
+
+  logOut() {
+    let varr = confirm("User logout successfully");
+    if (varr) {
+      this.loginService.logOut();
+      this.router.navigate(['']);
+    }
+    else {
+      this.router.navigate(['/admin']);
+    }
+
   }
 
 }
