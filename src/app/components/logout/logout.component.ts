@@ -17,7 +17,7 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     // this.authentocationService.logOut();
-    let varr = confirm("User logout successfully");
+    let varr = confirm("Do you want to logout ?");
     if (varr) {
       this.authentocationService.logOut();
       this.router.navigate(['']);

@@ -29,7 +29,7 @@ export class AdminnavbarComponent implements OnInit {
   }
 
   logOut() {
-    let varr = confirm("User logout successfully");
+    let varr = confirm("Do you want to logout ?");
     if (varr) {
       this.loginService.logOut();
       this.router.navigate(['']);
