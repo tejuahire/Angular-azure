@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit{
     showImage = true;
     switchToForgetpass = false;
 
-    constructor(private router: Router, private loginservice: AuthenticationService,
-        private authService: SocialAuthService, private toastr: ToastrService) { }
+    constructor(public router: Router, public loginservice: AuthenticationService,
+        public authService: SocialAuthService, public toastr: ToastrService) { }
     ngOnInit(): void {
        this.loginservice.logOut();
     }

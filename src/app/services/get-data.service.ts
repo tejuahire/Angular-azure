@@ -16,8 +16,7 @@ interface responseStatus {
   providedIn: 'root'
 })
 export class GetDataService {
-
-  baseUrl = "http://localhost:8080/";
+  baseUrl = "https://azure-springboot.azurewebsites.net/";
   url="";
   constructor(private http : HttpClient) { }
 
