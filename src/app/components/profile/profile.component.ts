@@ -46,7 +46,7 @@ amount;
         data => {console.log(data)
           if(data.status=="success"){
 	    alert("The amount successfully added"); 
-     this.router.navigate(['profile'])
+     window.location.reload();
      }        
           else
             this.toastr.error(" ",'error',{positionClass:"toast-bottom-center"});
@@ -63,7 +63,7 @@ amount;
         data => {console.log(data)
           if(data.status=="success"){
 	    alert("The amount successfully withdraw");
-      this.router.navigate(['profile'])
+      window.location.reload();
      }        
           else
             this.toastr.error("",'error',{positionClass:"toast-bottom-center"});
