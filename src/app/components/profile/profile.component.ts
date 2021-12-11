@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../../services/get-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
@@ -14,6 +14,7 @@ amount;
 
   constructor( 
     private getDataservice: GetDataService, 
+    private router: Router,
     private _Activatedroute:ActivatedRoute,
     private toastr: ToastrService) { }
   userDetails;
