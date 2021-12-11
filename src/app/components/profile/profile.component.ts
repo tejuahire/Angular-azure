@@ -45,7 +45,7 @@ amount;
         data => {console.log(data)
           if(data.status=="success"){
 	    alert("The amount successfully added"); 
-     this.router.navigate(['profile']);
+     this.router.navigate(['profile'])
      }        
           else
             this.toastr.error(" ",'error',{positionClass:"toast-bottom-center"});
