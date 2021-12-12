@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../../services/get-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
@@ -14,6 +14,7 @@ amount;
 
   constructor( 
     private getDataservice: GetDataService, 
+    private router: Router,
     private _Activatedroute:ActivatedRoute,
     private toastr: ToastrService) { }
   userDetails;
@@ -45,7 +46,7 @@ amount;
         data => {console.log(data)
           if(data.status=="success"){
 	    alert("The amount successfully added"); 
-      window.location.reload();
+     location.reload(true);
      }        
           else
             this.toastr.error(" ",'error',{positionClass:"toast-bottom-center"});
@@ -62,7 +63,7 @@ amount;
         data => {console.log(data)
           if(data.status=="success"){
 	    alert("The amount successfully withdraw");
-      window.location.reload();
+      location.reload(true);
      }        
           else
             this.toastr.error("",'error',{positionClass:"toast-bottom-center"});
