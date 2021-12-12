@@ -36,6 +36,7 @@ import { GethistoryComponent } from './components/gethistory/gethistory.componen
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.component';
+import { HashLocationStrategy,LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,8 +101,9 @@ import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.compo
           }
         ]
       } as SocialAuthServiceConfig
-    },
+    },{provide:LocationStrategy,useClass:HashLocationStrategy},
     ThemeService],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }
